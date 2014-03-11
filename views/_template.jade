@@ -38,27 +38,15 @@ html
     block head
     title
       block title
-      | | 動民主
+      | | g0v 小精靈
 
   //-body(ng-app="main",ng-controller="ctrl.main")
-  body(ng-app="edemocracy")
+  body(ng-app="g0v-tour-guide")
     #navbar
       //-.ui.secondary.pointing.menu(role="navigation")
       .ui.secondary.pointing.menu
-        a(href="index.html").item.home 動民主
-        a(href="issues.html").item.issue 議題
-        a(href="proposals.html").item.proposals 提案
-        a(href="projects.html").item.project 專案
-        //-a(href="entries.html").item.entry 內容
-        a(href="tags.html").item.tags 標籤
-        //-a(href="users.html").item.users 公民
-        //-a(href="groups.html").item.groups 社團
-        //-a(href="groups.html").item.teams 小組
-        //-.menu.right(ng-controller="ctrl.user")
-          a(href="#",ng-show="!user",ng-click="login()").item 登入
-          a(href="#",ng-show="user").item {{user.username}}
-          a(href="#",ng-show="user",ng-click="logout()").item 登出
-        .item.right
+        a(href="index.html").item.home g0v 小精靈
+        //-.item.right
           .ui.icon.input
             input(type="text",placeholder="搜尋...",ng-model="keyword")
             i.search.link.icon

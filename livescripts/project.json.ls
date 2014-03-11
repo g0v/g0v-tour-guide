@@ -2,9 +2,7 @@
   name:
     zh: "動民主 2.0"
     en: "Dynamic Democracy"
-  category:
-    zh: "應用"
-    en: "Application"
+  category: "Application"
   contributor:
     1: <[ coordinator planner designer ]>
     3: <[ coordinator planner programmer ]>
@@ -18,7 +16,7 @@
     * type: "artwork"
       url: ""
       thumbnail: ""
-  workspace:
+  portal:
     * type: "hackpad"
       url: ""
     * type: "hackfoldr"
@@ -33,13 +31,13 @@
       url: ""
     * type: "irc channel"
       url: ""
+    * type: "github repo"
+      url: ""
 2:
   name:
     zh: "福利請聽"
     en: "listening"
-  category:
-    zh: "應用"
-    en: "Application"
+  category: "Application"
   contributor:
     iamblue: <[ coordinator planner programmer ]>
     Jedi: <[ consultant ]>
@@ -53,7 +51,7 @@
     * type: "artwork"
       url: ""
       thumbnail: ""
-  workspace:
+  portal:
     * type: "hackpad"
       url: ""
     * type: "hackfoldr"
@@ -67,4 +65,6 @@
     * type: "facebook community"
       url: ""
     * type: "irc channel"
+      url: ""
+    * type: "github repo"
       url: ""
