@@ -24,11 +24,11 @@ Mac
 * Install the dependences
    * make depends
 * make and run it
-	* cd don-republic
-	* sudo npm i -g static-here
-	* make all
-	* cd public/
-	* static-here
+  * cd don-republic
+  * sudo npm i -g static-here
+  * make all
+  * cd public/
+  * static-here
 * Open your browser
     * connect to http://localhost:8888/public/
 
@@ -44,5 +44,5 @@ kerokerokero
 
 License
 ============
-License: http://g0v.mit-license.org/ , although it is empty so far.
+License?
 
