@@ -27,14 +27,14 @@ html
     block head
     title
       block title
-      | | g0v 小精靈
+      | | g0v
 
   //-body(ng-app="main",ng-controller="ctrl.main")
   body(ng-app="g0v-tour-guide")
     #navbar
       //-.ui.secondary.pointing.menu(role="navigation")
       .ui.secondary.pointing.menu
-        a(href="index.html").item.home g0v 小精靈
+        a(href="index.html").item.home g0v
         //-.item.right
           .ui.icon.input
             input(type="text",placeholder="搜尋...",ng-model="keyword")
@@ -49,6 +49,5 @@ html
       //-script(src="js/vendor/plugins.js")
       //-script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js')
       //-script(src='//cdnjs.cloudflare.com/ajax/libs/angular-ui/0.4.0/angular-ui.min.js')
-      script(src="js/main.js")
       block script
 
