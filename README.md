@@ -40,7 +40,8 @@ Windows
 
 Mockup / Prototype
 ============
-kerokerokero
+官網 http://g0v.github.io/g0v-tour-guide/public/g0v.tw.html
+hackfoldr http://g0v.github.io/g0v-tour-guide/public/hack.html
 
 License
 ============
