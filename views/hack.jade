@@ -1,0 +1,112 @@
+extends _template
+
+block title
+  | hackspace
+
+block body
+
+  nav(ng-app="hack")
+    .ui.menu.inverted
+      a.item(href="hack.html") g0v 黑客
+      .ui.dropdown.item(href="pits.html") 坑
+        i.icon.dropdown
+        .menu
+          .item(href="") 我挖的
+            .ui.label 0
+          .item(href="") 我正在填
+            .ui.label.orange 2/3
+          .item(href="") 我感興趣的
+            .ui.label.orange 0/5
+            i.icon.right.arrow
+            .menu
+              .item(href="") 介面設計
+                .ui.label.orange 0/5
+              .item(href="") 企畫
+                .ui.label 0
+              .item(href="") 設定
+                i.icon.setting
+          .item(href="") 所有坑
+            .ui.label.orange 10/999
+      .ui.dropdown.item(href="projects.html") 專案
+        i.icon.dropdown
+        .menu
+          .item(href="") 動民主
+          .item(href="") 零時通關
+          .item(href="") 公民分類帽
+          .item(href="") 所有專案
+            .ui.label.blue 99
+          .item(href="") 所有零感
+            .ui.label.green 88
+          .item(href="") 設定
+            i.icon.setting
+      .ui.dropdown.item(href="resources.html") 資源
+        i.icon.dropdown
+        .menu
+          .item(href="") g0v 成果
+            i.icon.right.arrow
+            .menu
+              .item(href="") 文創授權中心
+              .item(href="") 軟體應用中心
+              .item(href="") 資料集
+              .item(href="") API
+              .item(href="") 模版
+              .item(href="") 教學文件
+              .item(href="") 國策智庫
+          .item(href="") g0v 黑客
+            .ui.label.teal 400
+          .item(href="") 公民團體
+          .item(href="") 募資平台
+      .ui.dropdown.item(href="discussions.html") 討論
+        i.icon.dropdown
+        .menu
+          .item(href="") irc 聊天室
+          .item(href="") google groups 郵件群組
+          .item(href="") discourse 新後勤中心
+          .item(href="") facebook 後勤中心
+            i.icon.external.url.sign
+          .item(href="") google+ 社群
+            i.icon.external.url.sign
+      .ui.dropdown.item(href="events.html") 活動
+        i.icon.dropdown
+        .menu
+          .item 歷屆大松
+            i.icon.right.arrow
+            .menu
+              .item(href="") hackath8n
+              .item(href="") hackath7n
+              .item(href="") hackath6n
+              .item(href="") hackath5n
+              .item(href="") hackath4n
+              .item(href="") hackath3n
+              .item(href="") hackath2n
+              .item(href="") hackath1n
+              .item(href="") hackath0n
+          .item(href="") 歷屆萌典松
+          .item(href="") 小松
+      .right.menu
+        .ui.dropdown.item ETBlue
+          i.icon.dropdown
+          .menu
+            .item 登出
+        .ui.dropdown.item 中文
+          i.icon.dropdown
+          .menu
+            .item 中文
+            .item English
+        a.item(href="g0v.tw.html") 官網
+          i.icon.right
+
+  //-#login
+    p login as
+    .ui.icon.labeled.button facebook
+      i.icon.facebook
+    .ui.icon.labeled.button google
+      i.icon.google.plus
+    .ui.icon.labeled.button twitter
+      i.icon.twitter
+
+
+block script
+  //-script.
+    $("#navbar .home").addClass("active");
+    $("#sidebar .all").addClass("active");

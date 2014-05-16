@@ -18,6 +18,12 @@ a,a:link
   text-decoration: none
   color: inherit
 
+.ui.menu
+  margin: 0
+  .menu .item
+    i.icon.arrow, i.icon.url, i.icon.setting
+      margin: 0 0 0 1rem
+
 // patch semantic ui black active button bug
 .ui.button.black.active
   background-color: #5C6166
@@ -32,7 +38,3 @@ a,a:link
 // add a custom color of label
 .ui.label.white
   background: none
-
-.ui.menu .item .ui.label
-  vertical-align: inherit
-  margin: -0.3em 0 -0.3em 0.5em

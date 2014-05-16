@@ -1,0 +1,69 @@
+extends _template
+
+block title
+  | 官網
+
+block body
+
+  nav(ng-app="g0v-tw",ng-init="mode='achievements'")
+    //-.ui.secondary.pointing.menu(role="navigation")
+    .ui.menu.inverted
+      a.item(href="index.html") g0v 零時政府
+      .ui.black.small.button.item twitter
+      .ui.black.small.button.item google+
+      .ui.black.small.button.item facebook
+      .right.menu
+        .item
+          .ui.icon.input
+            input(type="text",placeholder="搜尋...",ng-model="keyword")
+            i.search.link.icon
+        .ui.dropdown.item 中文
+          i.icon.dropdown
+          .menu
+            a.item 中文
+            a.item English
+    .ui.tiered.menu
+      .menu
+        a.item(ng-click="mode='achievements'") 成果
+        a.item(ng-click="mode='news'") 新聞
+        a.item(ng-click="mode='events'") 活動
+        a.item(ng-click="mode='about'") 關於
+        a.item(ng-click="mode='contact'") 聯繫
+        a.right.item(href="hack.html") 加入
+          i.icon.right
+      .ui.sub.menu(ng-show="mode=='achievements'")
+        a.item(href="") 文創授權中心
+        a.item(href="") 軟體應用中心
+        a.item(href="") 資料集
+        a.item(href="") API
+        a.item(href="") 模版
+        a.item(href="") 教學文件
+        a.item(href="") 國策智庫
+      .ui.sub.menu(ng-show="mode=='news'")
+        a.item(href="") irc log
+        a.item(href="") 公報
+        a.item(href="") 部落格
+        a.item(href="") 平面媒體報導
+        a.item(href="") 影音採訪報導
+      .ui.sub.menu(ng-show="mode=='events'")
+        a.item(href="") 黑客松
+        a.item(href="") 工作坊
+        a.item(href="") 課程
+        a.item(href="") 演講
+        a.item(href="") 行事曆
+      .ui.sub.menu(ng-show="mode=='about'")
+        a.item(href="") 簡介
+        a.item(href="") 宣言
+        a.item(href="") coc
+        a.item(href="") 常見問題
+        a.item(href="") 收支明細
+      .ui.sub.menu(ng-show="mode=='contact'")
+        a.item(href="") 演講/座談邀約
+        a.item(href="") 採訪邀約
+        a.item(href="") 問題回報
+
+block script
+  //-script.
+    $("#navbar .home").addClass("active");
+    $("#sidebar .all").addClass("active");
+
