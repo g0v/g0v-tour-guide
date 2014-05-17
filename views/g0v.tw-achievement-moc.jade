@@ -4,7 +4,7 @@ block sub-title
   | 文創
 
 block content
-  #moc
+  //-#moc
     - fs=require('fs');
     - yaml=require('yamljs');
     - jadeParser=require('jade');
@@ -44,6 +44,52 @@ block content
           img.rounded.ui.image(src=f[0])
         p.topic=f[2]
         span.ui.bottom.right.attached.label.small.circular.black=f[3]
+
+  #moc.ui.items
+    .item
+      a.download(href='').ui.ribbon.label.blue PSD
+      .image
+        img(src='file/moc/illustration/newshelper/tuiry/01.png')
+      .content
+        .meta tuiry
+        .name 新聞小幫手
+        .description 新聞小幫手專案的虛擬代言人
+    .item
+      a.download(href='').ui.ribbon.label.blue PSD
+      .image
+        img(src='file/moc/illustration/newshelper/tuiry/02.png')
+      .content
+        .meta tuiry
+        .name 新聞小幫手
+    .item
+      a.download(href='').ui.ribbon.label.blue PSD
+      .image
+        img(src='file/moc/illustration/newshelper/tuiry/03.png')
+      .content
+        .meta tuiry
+        .name 新聞小幫手
+    .item
+      a.download(href='').ui.ribbon.label.blue PSD
+      .image
+        img(src='file/moc/illustration/newshelper/tuiry/04.png')
+      .content
+        .meta tuiry
+        .name 新聞小幫手
+    .item
+      a.download(href='').ui.ribbon.label.blue PSD
+      .image
+        img(src='file/moc/illustration/newshelper/tuiry/05.png')
+      .content
+        .meta tuiry
+        .name 新聞小幫手
+    .item
+      a.download(href='').ui.ribbon.label.blue PSD
+      .image
+        img(src='file/moc/illustration/g0v/joyqul/loli.jpg')
+      .content
+        .meta 飄伶
+        .name g0v 娘
+        .description g0v 社群的虛擬代言人
 
 block script
   script.

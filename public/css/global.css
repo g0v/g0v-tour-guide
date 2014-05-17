@@ -58,3 +58,12 @@ a, a:link {
 #software .summary .platform .label {
   margin: 0.2rem;
 }
+
+#moc .item {
+  margin: 1rem 1rem 1rem 2rem;
+}
+#moc .download.ui.label {
+  position: absolute;
+  z-index: 9;
+  left: -1rem;
+}
