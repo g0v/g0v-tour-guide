@@ -5,10 +5,9 @@ block title
 
 block body
 
-  nav(ng-app="g0v-tw",ng-init="mode='achievements'")
-    //-.ui.secondary.pointing.menu(role="navigation")
+  nav#nav(ng-app="g0v-tw")
     .ui.menu.inverted
-      a.item(href="http://g0v.asia/") g0v 零時政府
+      a.item.landing(href="http://g0v.asia/") g0v 零時政府
       .ui.black.small.button.item twitter
       .ui.black.small.button.item google+
       .ui.black.small.button.item facebook
@@ -24,46 +23,17 @@ block body
             a.item English
     .ui.tiered.menu
       .menu
-        a.item(ng-click="mode='achievements'") 成果
-        a.item(ng-click="mode='news'") 新聞
-        a.item(ng-click="mode='events'") 活動
-        a.item(ng-click="mode='about'") 關於
-        a.item(ng-click="mode='contact'") 聯繫
-        a.right.item(href="hack.html") 加入
+        a.teal.item.achievement(href="g0v.tw-achievement-software.html") 成果
+        a.teal.item.news(href="g0v.tw-news-irc.html") 新聞
+        a.teal.item.event(href="g0v.tw-event-hackathon.html") 活動
+        a.teal.item.about(href="g0v.tw-about-about.html") 關於
+        a.teal.item.contact(href="g0v.tw-contact-talk.html") 聯繫
+        a.right.item.join(href="hack.html") 加入
           i.icon.right
-      .ui.sub.menu(ng-show="mode=='achievements'")
-        a.item(href="") 文創授權中心
-        a.item(href="") 軟體應用中心
-        a.item(href="") 資料集
-        a.item(href="") API
-        a.item(href="") 模版
-        a.item(href="") 教學文件
-        a.item(href="") 國策智庫
-      .ui.sub.menu(ng-show="mode=='news'")
-        a.item(href="") irc log
-        a.item(href="") 公報
-        a.item(href="") 部落格
-        a.item(href="") 平面媒體報導
-        a.item(href="") 影音採訪報導
-      .ui.sub.menu(ng-show="mode=='events'")
-        a.item(href="") 黑客松
-        a.item(href="") 工作坊
-        a.item(href="") 課程
-        a.item(href="") 演講
-        a.item(href="") 行事曆
-      .ui.sub.menu(ng-show="mode=='about'")
-        a.item(href="") 簡介
-        a.item(href="") 宣言
-        a.item(href="") coc
-        a.item(href="") 常見問題
-        a.item(href="") 收支明細
-      .ui.sub.menu(ng-show="mode=='contact'")
-        a.item(href="") 演講/座談邀約
-        a.item(href="") 採訪邀約
-        a.item(href="") 問題回報
+      block sub-menu
+
+  section#content
+    block content
 
 block script
-  //-script.
-    $("#navbar .home").addClass("active");
-    $("#sidebar .all").addClass("active");
 

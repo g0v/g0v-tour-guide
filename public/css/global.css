@@ -45,3 +45,16 @@ a, a:link {
 .ui.label.white {
   background: none;
 }
+
+#software .ui.image {
+  width: 5rem;
+  height: 5rem;
+  float: left;
+  margin-left: 1rem;
+}
+#software .summary {
+  margin-left: 7rem;
+}
+#software .summary .platform .label {
+  margin: 0.2rem;
+}
