@@ -11,15 +11,34 @@ block body
       .ui.dropdown.item(href="pits.html") 坑
         i.icon.dropdown
         .menu
+          .item(href="") 我挖的
+            .ui.label 0
+          .item(href="") 我正在填
+            .ui.label.orange 2/3
+          .item(href="") 我感興趣的
+            .ui.label.orange 0/5
+            i.icon.right.arrow
+            .menu
+              .item(href="") 介面設計
+                .ui.label.orange 0/5
+              .item(href="") 企畫
+                .ui.label 0
+              .item(href="") 設定
+                i.icon.setting
           .item(href="") 所有坑
             .ui.label.orange 10/999
       .ui.dropdown.item(href="projects.html") 專案
         i.icon.dropdown
         .menu
+          .item(href="") 動民主
+          .item(href="") 零時通關
+          .item(href="") 公民分類帽
           .item(href="") 所有專案
             .ui.label.blue 99
           .item(href="") 所有零感
             .ui.label.green 88
+          .item(href="") 設定
+            i.icon.setting
       .ui.dropdown.item(href="resources.html") 資源
         i.icon.dropdown
         .menu
@@ -65,6 +84,18 @@ block body
           .item(href="") 歷屆萌典松
           .item(href="") 小松
       .right.menu
+        .ui.dropdown.item ETBlue
+          i.icon.dropdown
+          .menu
+            .item 顯示於列表
+              .ui.label.green 是
+            .item 小天使模式
+              .ui.label.green 開啟
+            .item 新坑通知
+              .ui.label.red 關閉
+            .item(href="") 設定
+              i.icon.setting
+            .item 登出
         .ui.dropdown.item 中文
           i.icon.dropdown
           .menu
@@ -75,20 +106,3 @@ block body
 
   section#content
     block content
-      #login.ui.form.segment
-        p 黑客，歡迎！登入為：
-        .ui.icon.labeled.button github
-          i.icon.github
-        .ui.icon.labeled.button google
-          i.icon.google.plus
-        .ui.icon.labeled.button twitter
-          i.icon.twitter
-        .ui.icon.labeled.button facebook
-          i.icon.facebook
-      p
-        a(href="hack-guide-software.html").ui.right.icon.labeled.button [mockup only] 假設 user 成功登入，且是新帳號，前往技術部的問候
-          i.icon.right.arrow
-      p
-        a(href="hack-logged-in.html").ui.right.icon.labeled.button [mockup only] 假設 user 成功登入，且是舊帳號，前往個人主控台
-          i.icon.right.arrow
-
