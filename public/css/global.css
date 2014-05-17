@@ -68,9 +68,20 @@ a, a:link {
   left: -1rem;
 }
 
-#content {
+#guide {
   margin: 1rem;
 }
-#content #guide .indent {
+#guide .indent {
   margin-left: 2rem;
+}
+
+#panel {
+  margin: 1rem;
+  position: relative;
+}
+#panel #menu {
+  position: absolute;
+}
+#panel #content {
+  margin-left: 17rem;
 }

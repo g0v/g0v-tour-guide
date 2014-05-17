@@ -5,10 +5,10 @@ block title
 
 block body
 
-  nav#nav(ng-app="hack")
+  nav#nav
     .ui.menu.inverted
-      a.item.panel(href="hack.html") g0v 黑客
-      .ui.dropdown.item(href="pits.html") 坑
+      a.item.panel(href="hack-panel.html") g0v 黑客
+      .ui.dropdown.item 坑
         i.icon.dropdown
         .menu
           .item(href="") 我挖的
@@ -27,7 +27,7 @@ block body
                 i.icon.setting
           .item(href="") 所有坑
             .ui.label.orange 10/999
-      .ui.dropdown.item(href="projects.html") 專案
+      .ui.dropdown.item 專案
         i.icon.dropdown
         .menu
           .item(href="") 動民主
@@ -39,7 +39,7 @@ block body
             .ui.label.green 88
           .item(href="") 設定
             i.icon.setting
-      .ui.dropdown.item(href="resources.html") 資源
+      .ui.dropdown.item 資源
         i.icon.dropdown
         .menu
           .item(href="") g0v 成果
@@ -56,7 +56,7 @@ block body
             .ui.label.teal 400
           .item(href="") 公民團體
           .item(href="") 募資平台
-      .ui.dropdown.item(href="discussions.html") 討論
+      .ui.dropdown.item 討論
         i.icon.dropdown
         .menu
           .item(href="") irc 聊天室
@@ -66,7 +66,7 @@ block body
             i.icon.external.url.sign
           .item(href="") google+ 社群
             i.icon.external.url.sign
-      .ui.dropdown.item(href="events.html") 活動
+      .ui.dropdown.item 活動
         i.icon.dropdown
         .menu
           .item 歷屆大松
@@ -104,5 +104,4 @@ block body
         a.item(href="g0v.tw-achievement-moc.html") 官網
           i.icon.right
 
-  section#content
-    block content
+  block hackspace

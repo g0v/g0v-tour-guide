@@ -5,7 +5,7 @@ block title
 
 block body
 
-  nav#nav(ng-app="hack")
+  nav#nav
     .ui.menu.inverted
       a.item.panel(href="hack.html") g0v 黑客
       .ui.dropdown.item(href="pits.html") 坑
@@ -73,7 +73,7 @@ block body
         a.item(href="g0v.tw-achievement-moc.html") 官網
           i.icon.right
 
-  section#content
+  section#guide
     block content
       #login.ui.form.segment
         p 黑客，歡迎！登入為：
@@ -89,6 +89,6 @@ block body
         a(href="hack-guide-software.html").ui.right.icon.labeled.button [mockup only] 假設 user 成功登入，且是新帳號，前往技術部的問候
           i.icon.right.arrow
       p
-        a(href="hack-logged-in.html").ui.right.icon.labeled.button [mockup only] 假設 user 成功登入，且是舊帳號，前往個人主控台
+        a(href="hack-panel.html").ui.right.icon.labeled.button [mockup only] 假設 user 成功登入，且是舊帳號，前往個人主控台
           i.icon.right.arrow
 
