@@ -8,36 +8,49 @@ block body
   nav#nav
     .ui.menu.inverted
       a.item.panel(href="hack.html") g0v 黑客
-      .ui.dropdown.item(href="pits.html") 坑
+      //-.ui.dropdown.item 坑
         i.icon.dropdown
         .menu
           .item(href="") 所有坑
             .ui.label.orange 10/999
-      .ui.dropdown.item(href="projects.html") 專案
+      .ui.dropdown.item 專案
         i.icon.dropdown
         .menu
           .item(href="") 所有專案
             .ui.label.blue 99
           .item(href="") 所有零感
             .ui.label.green 88
-      .ui.dropdown.item(href="resources.html") 資源
+      .ui.dropdown.item 資源
         i.icon.dropdown
         .menu
-          .item(href="") g0v 成果
-            i.icon.right.arrow
-            .menu
-              .item(href="") 文創授權中心
-              .item(href="") 軟體應用中心
-              .item(href="") 資料集
-              .item(href="") API
-              .item(href="") 模版
-              .item(href="") 教學文件
-              .item(href="") 國策智庫
-          .item(href="") g0v 黑客
-            .ui.label.teal 400
-          .item(href="") 公民團體
-          .item(href="") 募資平台
-      .ui.dropdown.item(href="discussions.html") 討論
+          .item(href="") 文創授權中心
+            i.icon.external.url.sign
+          .item(href="") 軟體應用中心
+            i.icon.external.url.sign
+          .item(href="") 資料集
+            i.icon.external.url.sign
+          .item(href="") API
+            i.icon.external.url.sign
+          .item(href="") 模版
+            i.icon.external.url.sign
+          .item(href="") 教學文件
+            i.icon.external.url.sign
+          .item(href="") 國策智庫
+            i.icon.external.url.sign
+          .item(href="") 相關公民團體
+          .item(href="") 相關募資平台
+      .ui.dropdown.item 協作
+        i.icon.dropdown
+        .menu
+          .item(href="") github 動態
+            i.icon.external.url.sign
+          .item(href="") hackpad 動態
+            i.icon.external.url.sign
+          .item(href="") hackfoldr 動態
+            i.icon.external.url.sign
+          .item(href="") google drive 動態
+            i.icon.external.url.sign
+      .ui.dropdown.item 討論
         i.icon.dropdown
         .menu
           .item(href="") irc 聊天室
@@ -47,9 +60,10 @@ block body
             i.icon.external.url.sign
           .item(href="") google+ 社群
             i.icon.external.url.sign
-      .ui.dropdown.item(href="events.html") 活動
+      .ui.dropdown.item 松
         i.icon.dropdown
         .menu
+          .item(href="") 即將舉行
           .item 歷屆大松
             i.icon.right.arrow
             .menu
@@ -64,6 +78,7 @@ block body
               .item(href="") hackath0n
           .item(href="") 歷屆萌典松
           .item(href="") 小松
+          .item(href="") 行事曆
       .right.menu
         .ui.dropdown.item 中文
           i.icon.dropdown
@@ -74,21 +89,20 @@ block body
           i.icon.right
 
   section#guide
-    block content
-      #login.ui.form.segment
-        p 黑客，歡迎！登入為：
-        .ui.icon.labeled.button github
-          i.icon.github
-        .ui.icon.labeled.button google
-          i.icon.google.plus
-        .ui.icon.labeled.button twitter
-          i.icon.twitter
-        .ui.icon.labeled.button facebook
-          i.icon.facebook
-      p
-        a(href="hack-guide-software.html").ui.right.icon.labeled.button [mockup only] 假設 user 成功登入，且是新帳號，前往技術部的問候
-          i.icon.right.arrow
-      p
-        a(href="hack-panel.html").ui.right.icon.labeled.button [mockup only] 假設 user 成功登入，且是舊帳號，前往個人主控台
-          i.icon.right.arrow
+    #login.ui.form.segment
+      p 黑客，歡迎！登入為：
+      .ui.icon.labeled.button github
+        i.icon.github
+      .ui.icon.labeled.button google
+        i.icon.google.plus
+      .ui.icon.labeled.button twitter
+        i.icon.twitter
+      .ui.icon.labeled.button facebook
+        i.icon.facebook
+    p
+      a(href="hack-guide-software.html").ui.right.icon.labeled.button [mockup only] 假設 user 成功登入，且是新帳號，前往技術部的問候
+        i.icon.right.arrow
+    p
+      a(href="hack-panel.html").ui.right.icon.labeled.button [mockup only] 假設 user 成功登入，且是舊帳號，前往個人主控台
+        i.icon.right.arrow
 
