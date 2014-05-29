@@ -1,4 +1,4 @@
-extends hack-logged-in
+extends hack
 
 block hackspace
   #guide.ui.form.segment
@@ -194,7 +194,7 @@ block hackspace
       input(type="text",placeholder="以半形逗點 , 隔開")
 
     p
-      a(href="hack-panel-pit.html").ui.right.icon.labeled.button.orange 好了，趕快告訴我有哪些坑可以填！
+      a(href="hack-panel-pit.html",ng-click="login=='done'").ui.right.icon.labeled.button.orange 好了，趕快告訴我有哪些坑可以填！
         i.icon.right.arrow
     p
       a(href="hack-guide-art.html").ui.right.icon.labeled.button.green 等一下，我還有其他專長

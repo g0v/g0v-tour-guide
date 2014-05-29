@@ -7,21 +7,40 @@ block body
 
   nav#nav
     .ui.menu.inverted
-      a.item.panel(href="hack.html") g0v 黑客
+      a.item.panel(href="hack-panel.html") g0v 黑客
       //-.ui.dropdown.item 坑
         i.icon.dropdown
         .menu
+          .item(href="") 我挖的
+            .ui.label 0
+          .item(href="") 我正在填
+            .ui.label.orange 2/3
+          .item(href="") 我感興趣的
+            .ui.label.orange 0/5
+            i.icon.right.arrow
+            .menu
+              .item(href="") 介面設計
+                .ui.label.orange 0/5
+              .item(href="") 企畫
+                .ui.label 0
+              .item(href="") 設定
+                i.icon.setting
           .item(href="") 所有坑
             .ui.label.orange 10/999
       .ui.dropdown.item 坑
         i.icon.dropdown
         .menu
+          .item(href="",ng-show="login=='done'") 動民主
+          .item(href="",ng-show="login=='done'") 零時通關
+          .item(href="",ng-show="login=='done'") 公民分類帽
           .item(href="") 所有坑
             .ui.label.red 999
           .item(href="") 所有專案
             .ui.label.blue 99
           .item(href="") 所有零感
             .ui.label.green 88
+          .item(href="",ng-show="login=='done'") 設定
+            i.icon.setting
       .ui.dropdown.item 資源
         i.icon.dropdown
         .menu
@@ -39,6 +58,7 @@ block body
             i.icon.external.url.sign
           .item(href="") 國策智庫
             i.icon.external.url.sign
+          .item(href="") g0v 黑客
           .item(href="") 相關公民團體
           .item(href="") 相關募資平台
       .ui.dropdown.item 協作
@@ -83,6 +103,18 @@ block body
           .item(href="") 行事曆
       .right.menu
         a.item(href="",ng-show="login=='no'",ng-click="login='yes'") 登入
+        .ui.dropdown.item(ng-show="login=='done'") ETBlue
+          i.icon.dropdown
+          .menu
+            .item 顯示於列表
+              .ui.label.green 是
+            .item 小天使模式
+              .ui.label.green 開啟
+            .item 新坑通知
+              .ui.label.red 關閉
+            .item(href="") 設定
+              i.icon.setting
+            .item 登出
         .ui.dropdown.item 中文
           i.icon.dropdown
           .menu
@@ -91,114 +123,116 @@ block body
         a.item(href="g0v.tw-achievement-culture.html") 官網
           i.icon.right
 
-  section#guide
-    #login.ui.form.segment(ng-show="login=='yes'")
-      p 黑客，歡迎！登入為：
-      .ui.icon.labeled.button github
-        i.icon.github
-      .ui.icon.labeled.button google
-        i.icon.google.plus
-      .ui.icon.labeled.button twitter
-        i.icon.twitter
-      .ui.icon.labeled.button facebook
-        i.icon.facebook
-      .ui.icon.right.labeled.button(ng-click="login='no'") 不登入，保持匿名，以策安全
-        i.icon.hide
-      p
-        a(href="hack-guide-software.html") [mockup comments] 假設 user 成功登入，且是新帳號，前往技術部的問候
-          i.icon.right.arrow
-      p
-        a(href="hack-panel.html") [mockup comments] 假設 user 成功登入，且是舊帳號，前往個人主控台
-          i.icon.right.arrow
+  block hackspace
 
-      p
-        a(href="",ng-click="login='no'") [mockup comments] 假設 user 選擇保持匿名，隱藏本登入區塊，但 nav bar 出現登入按鈕
-          i.icon.up.arrow
+    section#guide
+      #login.ui.form.segment(ng-show="login=='yes'")
+        p 黑客，歡迎！登入為：
+        .ui.icon.labeled.button github
+          i.icon.github
+        .ui.icon.labeled.button google
+          i.icon.google.plus
+        .ui.icon.labeled.button twitter
+          i.icon.twitter
+        .ui.icon.labeled.button facebook
+          i.icon.facebook
+        .ui.icon.right.labeled.button(ng-click="login='no'") 不登入，保持匿名，以策安全
+          i.icon.hide
+        p
+          a(href="hack-guide-software.html") [mockup comments] 假設 user 成功登入，且是新帳號，前往技術部的問候
+            i.icon.right.arrow
+        p
+          a(href="hack-panel.html",ng-click="login='done'") [mockup comments] 假設 user 成功登入，且是舊帳號，前往個人主控台
+            i.icon.right.arrow
 
-    .ui.horizontal.divider(ng-show="login=='yes'") 或
+        p
+          a(href="",ng-click="login='no'") [mockup comments] 假設 user 選擇保持匿名，隱藏本登入區塊，但 nav bar 出現登入按鈕
+            i.icon.up.arrow
 
-    #lucky(ng-init="display='none'")
+      .ui.horizontal.divider(ng-show="login=='yes'") 或
 
-      p 直接填坑！試試手氣吧：
-      .ui.icon.labeled.button(ng-click="display='software'") 技術部好手氣
-        i.icon.lab
-      .ui.icon.labeled.button(ng-click="display='culture'") 文化部好手氣
-        i.icon.photo
-      .ui.icon.labeled.button(ng-click="display='research'") 研究院好手氣
-        i.icon.book
-      .ui.icon.labeled.button(ng-click="display='ai'") 工人院好手氣
-        i.icon.male
+      #lucky(ng-init="display='none'")
 
-      table.ui.table.segment(ng-show="display=='software'")
-        thead
-          tr
-            th 來自哪個專案
-            th 類型
-            th 要做什麼
-            th 坑址
-        tbody
-          tr
-            td: a(href="").ui.label 國會大代誌
-            td
-              a(href="").ui.label 前端
-              a(href="").ui.label angular
-            td controller debug blahblahblah
-            td: a(href="").ui.label github
-          tr
-            td: a(href="").ui.label 基礎建設
-            td: a(href="").ui.label 企畫
-            td 專案整理、各專案長短版簡介撰寫
-            td: a(href="").ui.label hackpad
-          tr
-            td: a(href="").ui.label 萌典
-            td: a(href="").ui.label 資料
-            td 這裡有批柴好便宜的
-            td: a(href="").ui.label github
-          tr
-            td ↑按了會打開專案頁
-            td ↑按了會打開坑分類頁
-            td 
-            td ↑按了會打開最新一期零時坑報 or github issue 頁
-        tfoot
-          tr
-            td(colspan="4")
-              a(href="").ui.right.icon.labeled.button 所有技術部坑
-                i.icon.right.arrow
+        p 直接填坑！試試手氣吧：
+        .ui.icon.labeled.button(ng-click="display='software'") 技術部好手氣
+          i.icon.lab
+        .ui.icon.labeled.button(ng-click="display='culture'") 文化部好手氣
+          i.icon.photo
+        .ui.icon.labeled.button(ng-click="display='research'") 研究院好手氣
+          i.icon.book
+        .ui.icon.labeled.button(ng-click="display='ai'") 工人院好手氣
+          i.icon.male
 
-      table.ui.table.segment(ng-show="display=='culture'")
-        thead
-          tr
-            th 來自哪個專案
-            th 類型
-            th 要做什麼
-            th 坑址
-        tbody
-          tr
-            td: a(href="").ui.label 國會大代誌
-            td: a(href="").ui.label 插畫
-            td 國會娘角色設計
-            td: a(href="").ui.label hackpad
-          tr
-            td: a(href="").ui.label 基礎建設
-            td
-              a(href="").ui.label 翻譯
-              a(href="").ui.label transfix
-            td g0v 介紹 i18n 日文版
-            td: a(href="").ui.label hackpad
-          tr
-            td: a(href="").ui.label 開源藝術示範區
-            td: a(href="").ui.label 編曲
-            td 小幫手之歌編曲
-            td: a(href="").ui.label hackpad
-          tr
-            td ↑按了會打開專案頁
-            td ↑按了會打開坑分類頁
-            td 
-            td ↑按了會打開最新一期零時坑報
-        tfoot
-          tr
-            td(colspan="4")
-              a(href="").ui.right.icon.labeled.button 所有文化部坑
-                i.icon.right.arrow
+        table.ui.table.segment(ng-show="display=='software'")
+          thead
+            tr
+              th 來自哪個專案
+              th 類型
+              th 要做什麼
+              th 坑址
+          tbody
+            tr
+              td: a(href="").ui.label 國會大代誌
+              td
+                a(href="").ui.label 前端
+                a(href="").ui.label angular
+              td controller debug blahblahblah
+              td: a(href="").ui.label github
+            tr
+              td: a(href="").ui.label 基礎建設
+              td: a(href="").ui.label 企畫
+              td 專案整理、各專案長短版簡介撰寫
+              td: a(href="").ui.label hackpad
+            tr
+              td: a(href="").ui.label 萌典
+              td: a(href="").ui.label 資料
+              td 這裡有批柴好便宜的
+              td: a(href="").ui.label github
+            tr
+              td ↑按了會打開專案頁
+              td ↑按了會打開坑分類頁
+              td 
+              td ↑按了會打開最新一期零時坑報 or github issue 頁
+          tfoot
+            tr
+              td(colspan="4")
+                a(href="").ui.right.icon.labeled.button 所有技術部坑
+                  i.icon.right.arrow
 
-      p [mockup comments] 按了好手氣後，會隨機顯示最新一期零時坑報中的該部門底下的三個坑，同樣按鈕再按一次可以洗牌
+        table.ui.table.segment(ng-show="display=='culture'")
+          thead
+            tr
+              th 來自哪個專案
+              th 類型
+              th 要做什麼
+              th 坑址
+          tbody
+            tr
+              td: a(href="").ui.label 國會大代誌
+              td: a(href="").ui.label 插畫
+              td 國會娘角色設計
+              td: a(href="").ui.label hackpad
+            tr
+              td: a(href="").ui.label 基礎建設
+              td
+                a(href="").ui.label 翻譯
+                a(href="").ui.label transfix
+              td g0v 介紹 i18n 日文版
+              td: a(href="").ui.label hackpad
+            tr
+              td: a(href="").ui.label 開源藝術示範區
+              td: a(href="").ui.label 編曲
+              td 小幫手之歌編曲
+              td: a(href="").ui.label hackpad
+            tr
+              td ↑按了會打開專案頁
+              td ↑按了會打開坑分類頁
+              td 
+              td ↑按了會打開最新一期零時坑報
+          tfoot
+            tr
+              td(colspan="4")
+                a(href="").ui.right.icon.labeled.button 所有文化部坑
+                  i.icon.right.arrow
+
+        p [mockup comments] 按了好手氣後，會隨機顯示最新一期零時坑報中的該部門底下的三個坑，同樣按鈕再按一次可以洗牌

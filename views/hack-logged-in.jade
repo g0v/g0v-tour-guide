@@ -30,16 +30,16 @@ block body
       .ui.dropdown.item 坑
         i.icon.dropdown
         .menu
-          .item(href="") 動民主
-          .item(href="") 零時通關
-          .item(href="") 公民分類帽
+          .item(href="",ng-show="login=='done'") 動民主
+          .item(href="",ng-show="login=='done'") 零時通關
+          .item(href="",ng-show="login=='done'") 公民分類帽
           .item(href="") 所有坑
             .ui.label.red 999
           .item(href="") 所有專案
             .ui.label.blue 99
           .item(href="") 所有零感
             .ui.label.green 88
-          .item(href="") 設定
+          .item(href="",ng-show="login=='done'") 設定
             i.icon.setting
       .ui.dropdown.item 資源
         i.icon.dropdown
@@ -58,6 +58,7 @@ block body
             i.icon.external.url.sign
           .item(href="") 國策智庫
             i.icon.external.url.sign
+          .item(href="") g0v 黑客
           .item(href="") 相關公民團體
           .item(href="") 相關募資平台
       .ui.dropdown.item 協作
@@ -101,7 +102,8 @@ block body
           .item(href="") 小松
           .item(href="") 行事曆
       .right.menu
-        .ui.dropdown.item ETBlue
+        a.item(href="",ng-show="login=='no'",ng-click="login='yes'") 登入
+        .ui.dropdown.item(ng-show="login=='done'") ETBlue
           i.icon.dropdown
           .menu
             .item 顯示於列表

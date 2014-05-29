@@ -1,4 +1,4 @@
-extends hack-logged-in
+extends hack
 
 block hackspace
   #guide.ui.form.segment
@@ -16,6 +16,6 @@ block hackspace
         input#check1(name="",type="checkbox")
         label(for="check1") 其他：
       input(type="text",size="50",placeholder="以半形逗點 , 隔開")
-    a(href="hack-panel-pit.html").ui.right.icon.labeled.button.red 好了，趕快告訴我有哪些坑可以填！
+    a(href="hack-panel-pit.html",ng-click="login=='done'").ui.right.icon.labeled.button.red 好了，趕快告訴我有哪些坑可以填！
       i.icon.right.arrow
 
