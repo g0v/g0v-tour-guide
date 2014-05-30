@@ -1,7 +1,7 @@
 extends hack
 
 block hackspace
-  #panel(ng-init="$scope.login=='done'")
+  #panel
     nav#menu.ui.vertical.menu
       //-a(href="hack-panel.html").item.panel 儀表版
       .item 填坑
@@ -17,12 +17,12 @@ block hackspace
           a(href="hack-panel-fund.html").item 相關募資平台
       .item 填坑管道
         .menu
-          a(href="").item 協作平台
-          a(href="").item 討論平台
-          a(href="").item 黑客松
+          a(href="hack-panel-colaboration.html").item 協作平台
+          a(href="hack-panel-discussion.html").item 討論平台
+          a(href="hack-panel-event.html").item 黑客松
       .item 我的
         .menu
-          a(href="hack-panel-resume.html").item.resume 黑客履歷
+          a(href="hack-panel-resume.html",ng-show="login=='done'").item.resume.login.done 黑客履歷
           a(href="hack-panel-leve1up.html").item.leve1up leve1up
           a(href="hack-panel-hat.html").item.hat 分類帽
 
@@ -34,3 +34,4 @@ block script
   script.
     $("#nav .panel").addClass("active");
     $("#menu .panel").addClass("active");
+    $(".login.done").show(); // not working..

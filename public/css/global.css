@@ -46,6 +46,10 @@ a, a:link {
   background: none;
 }
 
+.float.right {
+  float: right;
+}
+
 #software .ui.image {
   width: 5rem;
   height: 5rem;

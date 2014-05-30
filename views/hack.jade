@@ -102,8 +102,8 @@ block body
           .item(href="") 小松
           .item(href="") 行事曆
       .right.menu
-        a.item(href="",ng-show="login=='no'",ng-click="login='yes'") 登入
-        .ui.dropdown.item(ng-show="login=='done'") ETBlue
+        a.item(href="",ng-show="login=='no'",ng-click="login='yes'").login.no 登入
+        .ui.dropdown.item(ng-show="login=='done'").login.done ETBlue
           i.icon.dropdown
           .menu
             .item 顯示於列表
@@ -166,29 +166,31 @@ block body
         table.ui.table.segment(ng-show="display=='software'")
           thead
             tr
-              th 來自哪個專案
+              th 坑
               th 類型
-              th 要做什麼
               th 坑址
           tbody
             tr
-              td: a(href="").ui.label 國會大代誌
+              td
+                a(href="").ui.label 國會大代誌
+                | controller debug blahblahblah
               td
                 a(href="").ui.label 前端
                 a(href="").ui.label angular
-              td controller debug blahblahblah
               td: a(href="").ui.label github
             tr
-              td: a(href="").ui.label 基礎建設
+              td
+                a(href="").ui.label 基礎建設
+                | 專案整理、各專案長短版簡介撰寫
               td: a(href="").ui.label 企畫
-              td 專案整理、各專案長短版簡介撰寫
               td: a(href="").ui.label hackpad
             tr
-              td: a(href="").ui.label 萌典
+              td
+                a(href="").ui.label 萌典
+                | 這裡有批柴好便宜的
               td: a(href="").ui.label 資料
-              td 這裡有批柴好便宜的
               td: a(href="").ui.label github
-            tr
+            //-tr
               td ↑按了會打開專案頁
               td ↑按了會打開坑分類頁
               td 
@@ -202,29 +204,31 @@ block body
         table.ui.table.segment(ng-show="display=='culture'")
           thead
             tr
-              th 來自哪個專案
+              th 坑
               th 類型
-              th 要做什麼
               th 坑址
           tbody
             tr
-              td: a(href="").ui.label 國會大代誌
+              td
+                a(href="").ui.label 國會大代誌
+                | 國會娘角色設計
               td: a(href="").ui.label 插畫
-              td 國會娘角色設計
               td: a(href="").ui.label hackpad
             tr
-              td: a(href="").ui.label 基礎建設
+              td
+                a(href="").ui.label 基礎建設
+                | g0v 介紹 i18n 日文版
               td
                 a(href="").ui.label 翻譯
                 a(href="").ui.label transfix
-              td g0v 介紹 i18n 日文版
               td: a(href="").ui.label hackpad
             tr
-              td: a(href="").ui.label 開源藝術示範區
+              td
+                a(href="").ui.label 開源藝術示範區
+                | 小幫手之歌編曲
               td: a(href="").ui.label 編曲
-              td 小幫手之歌編曲
               td: a(href="").ui.label hackpad
-            tr
+            //-tr
               td ↑按了會打開專案頁
               td ↑按了會打開坑分類頁
               td 
