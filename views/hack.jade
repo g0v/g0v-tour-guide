@@ -138,6 +138,8 @@ block body
 
     section#guide
       include _hack-login
+
+      div(ng-show="login=='yes'")
         p
           a(href="hack-guide-software.html") [mockup comments] 假設 user 成功登入，且是新帳號，前往技術部的問候
             i.icon.right.arrow
