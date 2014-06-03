@@ -1,14 +1,14 @@
 extends hack-panel
 
 block content
-  nav.ui.menu
-    .item 我挖的
+  nav.ui.menu(ng-init="view='all'")
+    a(href="",ng-click="view='dig'",ng-class="{active:view=='dig'}",ng-show="login=='done'").item 我挖的
       .ui.label.purple 3
-    .item.active 我填的
+    a(href="",ng-click="view='fill'",ng-class="{active:view=='fill'}",ng-show="login=='done'").item 我填的
       .ui.label.red 4 
-    .item 挖給我填的
+    //-a(href="",ng-click="view='interest'",ng-class="{active:view=='interest'}",ng-show="login=='done'").item 挖給我填的
       .ui.label.yellow 10 
-    .item 所有坑
+    a(href="",ng-class="{active:view=='all'}",ng-click="view='all'").item 所有坑
       .ui.label 999
     .right.menu
       .item
@@ -16,409 +16,501 @@ block content
           input(type="text",placeholder="搜尋...",ng-model="keyword")
           i.search.link.icon
 
-  section#fill
-    .ui.fluid.basic.accordion
-      .title.active
-        i.icon.dropdown
-        | 正在填
-        .ui.label.red 4
-      .content.active
-        table.ui.table.segment
-          tbody
-            tr
-              td
-                a(href="").ui.label 國會大代誌
-                a(href="",ng-click="pit1Detail=!pit1Detail").with.padding controller debug blahblahblah
-              td: a(href="").ui.label github
-              td
-                .float.right
-                  .ui.icon.button.small.green
-                    i.icon.checkmark
-                  .ui.icon.button.small
-                    i.icon.archive
-                  .ui.icon.button.small.black
-                    i.icon.remove
-            tr(ng-show="pit1Detail==true")
-              td(colspan="3").detail
-                ul
-                  li
-                    | 坑型
-                    a(href="").ui.label g0v 技術部
-                    a(href="").ui.label 前端
-                    | ，標記
-                    a(href="").ui.label bug
-                      i.icon.external.url
-                    | ，里程碑
-                    a(href="").ui.label OOO
-                      i.icon.external.url
-                    | ，目前狀態 open，指派給
-                    a(href="").ui.label Lee1092
-                      i.icon.external.url
-                  li
-                    | 所屬專案
-                    a(href="").ui.label 國會大代誌
-                    | ，宗旨「blahblah潮短版簡介」，使用技術
-                    a(href="").ui.label Angular JS
-                    a(href="").ui.label Semantic UI
-                    a(href="").ui.label Sass
-                    a(href="").ui.label Compass
-                    a(href="").ui.label Node JS
-                    | ，專案文件
-                    a(href="").ui.label hackfoldr
-                      i.icon.external.url
-                    | ，專案成果
-                    a(href="").ui.label 網頁
-                      i.icon.external.url
-            tr
-              td
-                a(href="").ui.label 基礎建設
-                a(href="",ng-click="pit2Detail=!pit2Detail").with.padding 專案整理、各專案長短版簡介撰寫
-              td: a(href="").ui.label hackpad
-              td
-                .float.right
-                  .ui.icon.button.small.green
-                    i.icon.checkmark
-                  .ui.icon.button.small
-                    i.icon.archive
-                  .ui.icon.button.small.black
-                    i.icon.remove
-            tr(ng-show="pit2Detail==true")
-              td(colspan="3").detail
-                ul
-                  li blah 零時坑報 hackpad 上的坑詳細描述，步驟 123 要注意什麼…。
-                  li 坑型
-                    a(href="").ui.label g0v 文化部
-                    a(href="").ui.label 文案
-                    | ，認領人
-                    a(href="").ui.label Lee1092
-                      i.icon.external.url
-                    a(href="").ui.label Lee1092
-                      i.icon.external.url
-                    a(href="").ui.label Lee1092
-                      i.icon.external.url
-                    | ，完成品
-                    a(href="").ui.label 網頁
-                      i.icon.external.url
-                  li 所屬專案
-                    a(href="").ui.label 基礎建設
-                    | ，宗旨「blahblah潮短版簡介」，使用技術
-                    a(href="").ui.label Angular JS
-                    a(href="").ui.label Semantic UI
-                    a(href="").ui.label Sass
-                    a(href="").ui.label Compass
-                    a(href="").ui.label Node JS
-                    | ，專案文件
-                    a(href="").ui.label hackfoldr
-                      i.icon.external.url
-                    | ，專案成果
-                    a(href="").ui.label 網頁
-                      i.icon.external.url
-            tr
-              td
-                a(href="").ui.label 基礎建設
-                a(href="",ng-click="pit3Detail=!pit3Detail").with.padding g0v 介紹 i18n 日文版
-              td: a(href="").ui.label hackpad
-              td
-                .float.right
-                  .ui.icon.button.small.green
-                    i.icon.checkmark
-                  .ui.icon.button.small
-                    i.icon.archive
-                  .ui.icon.button.small.black
-                    i.icon.remove
-            tr(ng-show="pit3Detail==true")
-              td(colspan="3") 
-                p.detail blah 零時坑報 hackpad 上的坑詳細描述，步驟 123 要注意什麼…。
-                p.detail 這是
-                  a(href="").ui.label g0v 文化部
-                  | 的
-                  a(href="").ui.label 文案
-                  | 坑。 3 天前，
-                  a(href="").ui.label ipa
-                    i.icon.external.url
-                  | 在
+  section#all(ng-show="view=='all' || login!='done'",ng-init="showFilter=false")
+    p 好手氣
+    include _hack-lucky
+    p 分類瀏覽
+    .ui.menu
+      .ui.button.item 顯示適合我的
+      .ui.button.item 顯示所有
+      a.item(ng-click="showFilter=!showFilter") 手動選坑
+        i.icon.arrow.down(ng-show="showFilter==false")
+        i.icon.arrow.up(ng-show="showFilter==true")
+      .item.right
+        .ui.radio.checkbox
+          input(name="",checked="",type="radio")
+          label 未完成的
+        .ui.radio.checkbox
+          input(name="",type="radio")
+          label 已完成的
+        .ui.radio.checkbox
+          input(name="",type="radio")
+          label 全部
+    #pit-selector.ui.four.column.stackable.divided.grid(ng-show="showFilter==true")
+      .row
+        .column
+          .ui.form
+            .inline.field
+              .ui.checkbox
+                input(type="checkbox")
+                label 所有專案
+            .inline.field
+              .ui.checkbox
+                input(type="checkbox")
+                label 國會大代誌
+            .inline.field
+              .ui.checkbox
+                input(type="checkbox")
+                label 萌典
+            .inline.field
+              .ui.checkbox
+                input(type="checkbox")
+                label 動民主
+            .inline.field
+              .ui.checkbox
+                input(type="checkbox")
+                label 基礎建設
+        .column
+          .ui.form
+            .inline.field
+              .ui.checkbox
+                input(type="checkbox")
+                label 所有部門
+            .inline.field
+              .ui.checkbox
+                input(type="checkbox")
+                label g0v 技術部
+            .inline.field
+              .ui.checkbox
+                input(type="checkbox")
+                label g0v 文化部
+            .inline.field
+              .ui.checkbox
+                input(type="checkbox")
+                label g0v 研究院
+            .inline.field
+              .ui.checkbox
+                input(type="checkbox")
+                label g0v 工人院
+        .column
+          .ui.form
+            .inline.field
+              .ui.checkbox
+                input(type="checkbox")
+                label 所有類型
+        .column
+          .ui.form
+            .inline.field
+              .ui.checkbox
+                input(type="checkbox")
+                label 所有技術 / 工具
+
+  section#dig(ng-show="view=='dig'")
+    .wrapper.for.angular.show.hide(ng-hide="login!='done'")
+      .ui.fluid.basic.accordion
+        .title.active
+          i.icon.dropdown
+          | 招領中
+          .ui.label.purple 3
+        .content.active
+
+  //-section#interest(ng-show="view=='interest'")
+    .wrapper.for.angular.show.hide(ng-hide="login!='done'")
+      p 推薦
+
+  section#fill(ng-show="view=='fill'")
+    .wrapper.for.angular.show.hide(ng-hide="login!='done'")
+      .ui.fluid.basic.accordion
+        .title.active
+          i.icon.dropdown
+          | 正在填
+          .ui.label.red 4
+        .content.active
+          table.ui.table.segment
+            tbody
+              tr
+                td
+                  a(href="").ui.label 國會大代誌
+                td
+                  a(href="",ng-click="pit1Detail=!pit1Detail").with.padding.block.display controller debug blahblahblah
+                //-td
+                  a(href="").ui.label 前端
+                  a(href="").ui.label angular
+                //-td: a(href="").ui.label github
+                td
+                  .float.right
+                    .ui.icon.button.small.green
+                      i.icon.checkmark
+                    .ui.icon.button.small
+                      i.icon.archive
+                    .ui.icon.button.small.black
+                      i.icon.remove
+              tr(ng-show="pit1Detail==true")
+                td(colspan="5").detail
+                  ul
+                    li
+                      | 坑型
+                      a(href="").ui.label g0v 技術部
+                      a(href="").ui.label 前端
+                      a(href="").ui.label angular
+                      | ，坑址
+                      a(href="").ui.label github
+                      | ，標記
+                      a(href="").ui.label bug
+                        i.icon.external.url
+                      | ，里程碑
+                      a(href="").ui.label OOO
+                        i.icon.external.url
+                      | ，目前狀態 open，指派給
+                      a(href="").ui.label Lee1092
+                        i.icon.external.url
+                    li
+                      | 所屬專案
+                      a(href="").ui.label 國會大代誌
+                      | ，宗旨「blahblah潮短版簡介」，使用技術
+                      a(href="").ui.label Angular JS
+                      a(href="").ui.label Semantic UI
+                      a(href="").ui.label Sass
+                      a(href="").ui.label Compass
+                      a(href="").ui.label Node JS
+                      | ，專案文件
+                      a(href="").ui.label hackfoldr
+                        i.icon.external.url
+                      | ，專案成果
+                      a(href="").ui.label 網頁
+                        i.icon.external.url
+              tr
+                td
                   a(href="").ui.label 基礎建設
-                  | 專案中挖了此坑，目前有
-                  a(href="").ui.label Lee1092
-                    i.icon.external.url
-                  a(href="").ui.label Lee1092
-                    i.icon.external.url
-                  a(href="").ui.label Lee1092
-                    i.icon.external.url
-                  | 等人認領，完成品在
-                  a(href="").ui.label 網頁
-                    i.icon.external.url
-                  | 。順帶一提，
-                  a(href="").ui.label 國會大代誌
-                  | 是一個「blahblah潮短版簡介」的專案，使用
-                  a(href="").ui.label Angular JS
-                  a(href="").ui.label Semantic UI
-                  a(href="").ui.label Sass
-                  a(href="").ui.label Compass
-                  a(href="").ui.label Node JS
-                  | 等工具，專案文件在
-                  a(href="").ui.label hackfoldr
-                    i.icon.external.url
-                  | ，專案成果在
-                  a(href="").ui.label 網頁
-                    i.icon.external.url
-                  | 。
-            tr
-              td
-                a(href="").ui.label 開源藝術示範區
-                a(href="",ng-click="pit4Detail=!pit4Detail").with.padding 小幫手之歌編曲
-              td: a(href="").ui.label hackpad
-              td
-                .float.right
-                  .ui.icon.button.small.green
-                    i.icon.checkmark
-                  .ui.icon.button.small
-                    i.icon.archive
-                  .ui.icon.button.small.black
-                    i.icon.remove
-            tr(ng-show="pit4Detail==true")
-              td(colspan="3") 
-                p.detail blah 零時坑報 hackpad 上的坑詳細描述，步驟 123 要注意什麼…。
-                p.detail 這是
-                  a(href="").ui.label g0v 文化部
-                  | 的
-                  a(href="").ui.label 文案
-                  | 坑。 3 天前，
-                  a(href="").ui.label ipa
-                    i.icon.external.url
-                  | 在
+                td
+                  a(href="",ng-click="pit2Detail=!pit2Detail").with.padding.block.display 專案整理、各專案長短版簡介撰寫
+                //-td: a(href="").ui.label 文案
+                //-td: a(href="").ui.label hackpad
+                td
+                  .float.right
+                    .ui.icon.button.small.green
+                      i.icon.checkmark
+                    .ui.icon.button.small
+                      i.icon.archive
+                    .ui.icon.button.small.black
+                      i.icon.remove
+              tr(ng-show="pit2Detail==true")
+                td(colspan="5").detail
+                  ul
+                    li blah 零時坑報 hackpad 上的坑詳細描述，步驟 123 要注意什麼…。
+                    li 坑型
+                      a(href="").ui.label g0v 文化部
+                      a(href="").ui.label 文案
+                      | ，坑址
+                      a(href="").ui.label hackpad
+                      | ，認領人
+                      a(href="").ui.label Lee1092
+                        i.icon.external.url
+                      a(href="").ui.label Lee1092
+                        i.icon.external.url
+                      a(href="").ui.label Lee1092
+                        i.icon.external.url
+                      | ，完成品
+                      a(href="").ui.label 網頁
+                        i.icon.external.url
+                    li 所屬專案
+                      a(href="").ui.label 基礎建設
+                      | ，宗旨「blahblah潮短版簡介」，使用技術
+                      a(href="").ui.label Angular JS
+                      a(href="").ui.label Semantic UI
+                      a(href="").ui.label Sass
+                      a(href="").ui.label Compass
+                      a(href="").ui.label Node JS
+                      | ，專案文件
+                      a(href="").ui.label hackfoldr
+                        i.icon.external.url
+                      | ，專案成果
+                      a(href="").ui.label 網頁
+                        i.icon.external.url
+              tr
+                td
                   a(href="").ui.label 基礎建設
-                  | 專案中挖了此坑，目前有
-                  a(href="").ui.label Lee1092
-                    i.icon.external.url
-                  a(href="").ui.label Lee1092
-                    i.icon.external.url
-                  a(href="").ui.label Lee1092
-                    i.icon.external.url
-                  | 等人認領，完成品在
-                  a(href="").ui.label 網頁
-                    i.icon.external.url
-                  | 。順帶一提，
+                td
+                  a(href="",ng-click="pit3Detail=!pit3Detail").with.padding.block.display g0v 介紹 i18n 日文版
+                //-td: a(href="").ui.label 翻譯
+                //-td: a(href="").ui.label hackpad
+                td
+                  .float.right
+                    .ui.icon.button.small.green
+                      i.icon.checkmark
+                    .ui.icon.button.small
+                      i.icon.archive
+                    .ui.icon.button.small.black
+                      i.icon.remove
+              tr(ng-show="pit3Detail==true")
+                td(colspan="5").detail
+                  ul
+                    li blah 零時坑報 hackpad 上的坑詳細描述，步驟 123 要注意什麼…。
+                    li 坑型
+                      a(href="").ui.label g0v 文化部
+                      a(href="").ui.label 文案
+                      | ，坑址
+                      a(href="").ui.label hackpad
+                      | ，認領人
+                      a(href="").ui.label Lee1092
+                        i.icon.external.url
+                      a(href="").ui.label Lee1092
+                        i.icon.external.url
+                      a(href="").ui.label Lee1092
+                        i.icon.external.url
+                      | ，完成品
+                      a(href="").ui.label 網頁
+                        i.icon.external.url
+                    li 所屬專案
+                      a(href="").ui.label 基礎建設
+                      | ，宗旨「blahblah潮短版簡介」，使用技術
+                      a(href="").ui.label Angular JS
+                      a(href="").ui.label Semantic UI
+                      a(href="").ui.label Sass
+                      a(href="").ui.label Compass
+                      a(href="").ui.label Node JS
+                      | ，專案文件
+                      a(href="").ui.label hackfoldr
+                        i.icon.external.url
+                      | ，專案成果
+                      a(href="").ui.label 網頁
+                        i.icon.external.url
+              tr
+                td
+                  a(href="").ui.label 開源藝術示範區
+                td
+                  a(href="",ng-click="pit4Detail=!pit4Detail").with.padding.block.display 小幫手之歌編曲
+                //-td: a(href="").ui.label 編曲
+                //-td: a(href="").ui.label hackpad
+                td
+                  .float.right
+                    .ui.icon.button.small.green
+                      i.icon.checkmark
+                    .ui.icon.button.small
+                      i.icon.archive
+                    .ui.icon.button.small.black
+                      i.icon.remove
+              tr(ng-show="pit4Detail==true")
+                td(colspan="5").detail
+                  ul
+                    li blah 零時坑報 hackpad 上的坑詳細描述，步驟 123 要注意什麼…。
+                    li 坑型
+                      a(href="").ui.label g0v 文化部
+                      a(href="").ui.label 文案
+                      | ，坑址
+                      a(href="").ui.label hackpad
+                      | ，認領人
+                      a(href="").ui.label Lee1092
+                        i.icon.external.url
+                      a(href="").ui.label Lee1092
+                        i.icon.external.url
+                      a(href="").ui.label Lee1092
+                        i.icon.external.url
+                      | ，完成品
+                      a(href="").ui.label 網頁
+                        i.icon.external.url
+                    li 所屬專案
+                      a(href="").ui.label 基礎建設
+                      | ，宗旨「blahblah潮短版簡介」，使用技術
+                      a(href="").ui.label Angular JS
+                      a(href="").ui.label Semantic UI
+                      a(href="").ui.label Sass
+                      a(href="").ui.label Compass
+                      a(href="").ui.label Node JS
+                      | ，專案文件
+                      a(href="").ui.label hackfoldr
+                        i.icon.external.url
+                      | ，專案成果
+                      a(href="").ui.label 網頁
+                        i.icon.external.url
+      .ui.fluid.basic.accordion
+        .title
+          i.icon.dropdown
+          | 填不完先擺著
+          .ui.label 13
+        .content
+          table.ui.table.segment
+            tbody
+              tr
+                td
+                  a(href="").ui.label 萌典
+                td
+                  a(href="",ng-click="pit5Detail=!pit5Detail").with.padding.block.display 這裡有批柴好便宜的
+                //-td: a(href="").ui.label 資料
+                //-td: a(href="").ui.label github
+                td
+                  .float.right
+                    .ui.icon.button.small.green
+                      i.icon.checkmark
+                    .ui.icon.button.small
+                      i.icon.up
+                    .ui.icon.button.small.black
+                      i.icon.remove
+              tr(ng-show="pit5Detail==true")
+                td(colspan="5").detail
+                  ul
+                    li
+                      | 坑型
+                      a(href="").ui.label g0v 技術部
+                      a(href="").ui.label 前端
+                      | ，標記
+                      a(href="").ui.label bug
+                        i.icon.external.url
+                      | ，里程碑
+                      a(href="").ui.label OOO
+                        i.icon.external.url
+                      | ，目前狀態 open，指派給
+                      a(href="").ui.label Lee1092
+                        i.icon.external.url
+                    li
+                      | 所屬專案
+                      a(href="").ui.label 國會大代誌
+                      | ，宗旨「blahblah潮短版簡介」，使用技術
+                      a(href="").ui.label Angular JS
+                      a(href="").ui.label Semantic UI
+                      a(href="").ui.label Sass
+                      a(href="").ui.label Compass
+                      a(href="").ui.label Node JS
+                      | ，專案文件
+                      a(href="").ui.label hackfoldr
+                        i.icon.external.url
+                      | ，專案成果
+                      a(href="").ui.label 網頁
+                        i.icon.external.url
+              tr
+                td
                   a(href="").ui.label 國會大代誌
-                  | 是一個「blahblah潮短版簡介」的專案，使用
-                  a(href="").ui.label Angular JS
-                  a(href="").ui.label Semantic UI
-                  a(href="").ui.label Sass
-                  a(href="").ui.label Compass
-                  a(href="").ui.label Node JS
-                  | 等工具，專案文件在
-                  a(href="").ui.label hackfoldr
-                    i.icon.external.url
-                  | ，專案成果在
-                  a(href="").ui.label 網頁
-                    i.icon.external.url
-                  | 。
-    .ui.fluid.basic.accordion
-      .title
-        i.icon.dropdown
-        | 填不完先擺著
-        .ui.label 13
-      .content
-        table.ui.table.segment
-          tbody
-            tr
-              td
-                a(href="").ui.label 萌典
-                a(href="",ng-click="pit5Detail=!pit5Detail").with.padding 這裡有批柴好便宜的
-              td: a(href="").ui.label github
-              td
-                .float.right
-                  .ui.icon.button.small.green
-                    i.icon.checkmark
-                  .ui.icon.button.small
-                    i.icon.up
-                  .ui.icon.button.small.black
-                    i.icon.remove
-            tr(ng-show="pit5Detail==true")
-              td(colspan="3") 
-                p.detail 這是
-                  a(href="").ui.label g0v 技術部
-                  | 的
-                  a(href="").ui.label 前端
-                  | 坑。 3 天前，
-                  a(href="").ui.label yhsiang
-                    i.icon.external.url
-                  | 在
+                td
+                  a(href="",ng-click="pit6Detail=!pit6Detail").with.padding.block.display 國會娘角色設計
+                //-td: a(href="").ui.label 插畫
+                //-td: a(href="").ui.label hackpad
+                td
+                  .float.right
+                    .ui.icon.button.small.green
+                      i.icon.checkmark
+                    .ui.icon.button.small
+                      i.icon.up
+                    .ui.icon.button.small.black
+                      i.icon.remove
+              tr(ng-show="pit6Detail==true")
+                td(colspan="5").detail
+                  ul
+                    li blah 零時坑報 hackpad 上的坑詳細描述，步驟 123 要注意什麼…。
+                    li 坑型
+                      a(href="").ui.label g0v 文化部
+                      a(href="").ui.label 文案
+                      | ，認領人
+                      a(href="").ui.label Lee1092
+                        i.icon.external.url
+                      a(href="").ui.label Lee1092
+                        i.icon.external.url
+                      a(href="").ui.label Lee1092
+                        i.icon.external.url
+                      | ，完成品
+                      a(href="").ui.label 網頁
+                        i.icon.external.url
+                    li 所屬專案
+                      a(href="").ui.label 基礎建設
+                      | ，宗旨「blahblah潮短版簡介」，使用技術
+                      a(href="").ui.label Angular JS
+                      a(href="").ui.label Semantic UI
+                      a(href="").ui.label Sass
+                      a(href="").ui.label Compass
+                      a(href="").ui.label Node JS
+                      | ，專案文件
+                      a(href="").ui.label hackfoldr
+                        i.icon.external.url
+                      | ，專案成果
+                      a(href="").ui.label 網頁
+                        i.icon.external.url
+      .ui.fluid.basic.accordion
+        .title
+          i.icon.dropdown
+          | 已填完
+          .ui.label 22
+        .content
+          table.ui.table.segment
+            tbody
+              tr
+                td
+                  a(href="").ui.label 萌典
+                td
+                  a(href="",ng-click="pit7Detail=!pit7Detail").with.padding.block.display 這裡有批柴好便宜的
+                //-td: a(href="").ui.label 資料
+                //-td: a(href="").ui.label github
+                td
+                  .float.right
+                    .ui.icon.button.small
+                      i.icon.undo
+              tr(ng-show="pit7Detail==true")
+                td(colspan="5").detail
+                  ul
+                    li blah 零時坑報 hackpad 上的坑詳細描述，步驟 123 要注意什麼…。
+                    li 坑型
+                      a(href="").ui.label g0v 文化部
+                      a(href="").ui.label 文案
+                      | ，認領人
+                      a(href="").ui.label Lee1092
+                        i.icon.external.url
+                      a(href="").ui.label Lee1092
+                        i.icon.external.url
+                      a(href="").ui.label Lee1092
+                        i.icon.external.url
+                      | ，完成品
+                      a(href="").ui.label 網頁
+                        i.icon.external.url
+                    li 所屬專案
+                      a(href="").ui.label 基礎建設
+                      | ，宗旨「blahblah潮短版簡介」，使用技術
+                      a(href="").ui.label Angular JS
+                      a(href="").ui.label Semantic UI
+                      a(href="").ui.label Sass
+                      a(href="").ui.label Compass
+                      a(href="").ui.label Node JS
+                      | ，專案文件
+                      a(href="").ui.label hackfoldr
+                        i.icon.external.url
+                      | ，專案成果
+                      a(href="").ui.label 網頁
+                        i.icon.external.url
+              tr
+                td
                   a(href="").ui.label 國會大代誌
-                  | 專案中挖了此坑，標記為
-                  a(href="").ui.label bug
-                    i.icon.external.url
-                  | ，掛在
-                  a(href="").ui.label OOO
-                    i.icon.external.url
-                  | 里程碑下，目前狀態為 open，指派給
-                  a(href="").ui.label Lee1092
-                    i.icon.external.url
-                  | 。順帶一提，
-                  a(href="").ui.label 國會大代誌
-                  | 是一個「blahblah潮短版簡介」的專案，使用
-                  a(href="").ui.label Angular JS
-                  a(href="").ui.label Semantic UI
-                  a(href="").ui.label Sass
-                  a(href="").ui.label Compass
-                  a(href="").ui.label Node JS
-                  | 等工具，專案文件在
-                  a(href="").ui.label hackfoldr
-                    i.icon.external.url
-                  | ，專案成果在
-                  a(href="").ui.label 網頁
-                    i.icon.external.url
-                  | 。
-            tr
-              td
-                a(href="").ui.label 國會大代誌
-                a(href="",ng-click="pit6Detail=!pit6Detail").with.padding 國會娘角色設計
-              td: a(href="").ui.label hackpad
-              td
-                .float.right
-                  .ui.icon.button.small.green
-                    i.icon.checkmark
-                  .ui.icon.button.small
-                    i.icon.up
-                  .ui.icon.button.small.black
-                    i.icon.remove
-            tr(ng-show="pit6Detail==true")
-              td(colspan="3") 
-                p.detail 這是
-                  a(href="").ui.label g0v 技術部
-                  | 的
-                  a(href="").ui.label 前端
-                  | 坑。 3 天前，
-                  a(href="").ui.label yhsiang
-                    i.icon.external.url
-                  | 在
-                  a(href="").ui.label 國會大代誌
-                  | 專案中挖了此坑，標記為
-                  a(href="").ui.label bug
-                    i.icon.external.url
-                  | ，掛在
-                  a(href="").ui.label OOO
-                    i.icon.external.url
-                  | 里程碑下，目前狀態為 open，指派給
-                  a(href="").ui.label Lee1092
-                    i.icon.external.url
-                  | 。順帶一提，
-                  a(href="").ui.label 國會大代誌
-                  | 是一個「blahblah潮短版簡介」的專案，使用
-                  a(href="").ui.label Angular JS
-                  a(href="").ui.label Semantic UI
-                  a(href="").ui.label Sass
-                  a(href="").ui.label Compass
-                  a(href="").ui.label Node JS
-                  | 等工具，專案文件在
-                  a(href="").ui.label hackfoldr
-                    i.icon.external.url
-                  | ，專案成果在
-                  a(href="").ui.label 網頁
-                    i.icon.external.url
-                  | 。
-    .ui.fluid.basic.accordion
-      .title
-        i.icon.dropdown
-        | 已填完
-        .ui.label 22
-      .content
-        table.ui.table.segment
-          tbody
-            tr
-              td
-                a(href="").ui.label 萌典
-                a(href="",ng-click="pit7Detail=!pit7Detail").with.padding 這裡有批柴好便宜的
-              td: a(href="").ui.label github
-              td
-                .float.right
-                  .ui.icon.button.small
-                    i.icon.undo
-            tr(ng-show="pit7Detail==true")
-              td(colspan="3") 
-                p.detail 這是
-                  a(href="").ui.label g0v 技術部
-                  | 的
-                  a(href="").ui.label 前端
-                  | 坑。 3 天前，
-                  a(href="").ui.label yhsiang
-                    i.icon.external.url
-                  | 在
-                  a(href="").ui.label 國會大代誌
-                  | 專案中挖了此坑，標記為
-                  a(href="").ui.label bug
-                    i.icon.external.url
-                  | ，掛在
-                  a(href="").ui.label OOO
-                    i.icon.external.url
-                  | 里程碑下，目前狀態為 open，指派給
-                  a(href="").ui.label Lee1092
-                    i.icon.external.url
-                  | 。順帶一提，
-                  a(href="").ui.label 國會大代誌
-                  | 是一個「blahblah潮短版簡介」的專案，使用
-                  a(href="").ui.label Angular JS
-                  a(href="").ui.label Semantic UI
-                  a(href="").ui.label Sass
-                  a(href="").ui.label Compass
-                  a(href="").ui.label Node JS
-                  | 等工具，專案文件在
-                  a(href="").ui.label hackfoldr
-                    i.icon.external.url
-                  | ，專案成果在
-                  a(href="").ui.label 網頁
-                    i.icon.external.url
-                  | 。
-            tr
-              td
-                a(href="").ui.label 國會大代誌
-                a(href="",ng-click="pit8Detail=!pit8Detail").with.padding 國會娘角色設計
-              td: a(href="").ui.label hackpad
-              td
-                .float.right
-                  .ui.icon.button.small
-                    i.icon.undo
-            tr(ng-show="pit8Detail==true")
-              td(colspan="3") 
-                p.detail 這是
-                  a(href="").ui.label g0v 技術部
-                  | 的
-                  a(href="").ui.label 前端
-                  | 坑。 3 天前，
-                  a(href="").ui.label yhsiang
-                    i.icon.external.url
-                  | 在
-                  a(href="").ui.label 國會大代誌
-                  | 專案中挖了此坑，標記為
-                  a(href="").ui.label bug
-                    i.icon.external.url
-                  | ，掛在
-                  a(href="").ui.label OOO
-                    i.icon.external.url
-                  | 里程碑下，目前狀態為 open，指派給
-                  a(href="").ui.label Lee1092
-                    i.icon.external.url
-                  | 。順帶一提，
-                  a(href="").ui.label 國會大代誌
-                  | 是一個「blahblah潮短版簡介」的專案，使用
-                  a(href="").ui.label Angular JS
-                  a(href="").ui.label Semantic UI
-                  a(href="").ui.label Sass
-                  a(href="").ui.label Compass
-                  a(href="").ui.label Node JS
-                  | 等工具，專案文件在
-                  a(href="").ui.label hackfoldr
-                    i.icon.external.url
-                  | ，專案成果在
-                  a(href="").ui.label 網頁
-                    i.icon.external.url
-                  | 。
-    .ui.fluid.basic.accordion
-      .title
-        i.icon.dropdown
-        | 統計
-      .content
-        p tbd: 填過哪幾個專案、每個分類標籤各填過幾次、… etc.，用某種 data visualization 顯示
+                td
+                  a(href="",ng-click="pit8Detail=!pit8Detail").with.padding.block.display 國會娘角色設計
+                //-td: a(href="").ui.label 插畫
+                //-td: a(href="").ui.label hackpad
+                td
+                  .float.right
+                    .ui.icon.button.small
+                      i.icon.undo
+              tr(ng-show="pit8Detail==true")
+                td(colspan="5").detail
+                  ul
+                    li blah 零時坑報 hackpad 上的坑詳細描述，步驟 123 要注意什麼…。
+                    li 坑型
+                      a(href="").ui.label g0v 文化部
+                      a(href="").ui.label 文案
+                      | ，認領人
+                      a(href="").ui.label Lee1092
+                        i.icon.external.url
+                      a(href="").ui.label Lee1092
+                        i.icon.external.url
+                      a(href="").ui.label Lee1092
+                        i.icon.external.url
+                      | ，完成品
+                      a(href="").ui.label 網頁
+                        i.icon.external.url
+                    li 所屬專案
+                      a(href="").ui.label 基礎建設
+                      | ，宗旨「blahblah潮短版簡介」，使用技術
+                      a(href="").ui.label Angular JS
+                      a(href="").ui.label Semantic UI
+                      a(href="").ui.label Sass
+                      a(href="").ui.label Compass
+                      a(href="").ui.label Node JS
+                      | ，專案文件
+                      a(href="").ui.label hackfoldr
+                        i.icon.external.url
+                      | ，專案成果
+                      a(href="").ui.label 網頁
+                        i.icon.external.url
+      .ui.fluid.basic.accordion
+        .title
+          i.icon.dropdown
+          | 統計
+        .content
+          p tbd: 填過哪幾個專案、每個分類標籤各填過幾次、… etc.，用某種 data visualization 顯示
 
 block script
   script.

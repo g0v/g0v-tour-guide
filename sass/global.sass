@@ -19,6 +19,8 @@ a,a:link
   color: inherit
   &.with.padding
     padding: 0.5em
+  &.block.display
+    display: block
 
 .ui.menu
   margin: 0
@@ -44,6 +46,10 @@ a,a:link
 // float element
 .float.right
   float: right
+
+.mobile.hide
+  @media screen and (max-width: 960px)
+    display: none
 
 #software
   .ui.image
@@ -72,6 +78,8 @@ a,a:link
 #panel
   margin: 1rem
   position: relative
+  @media screen and (max-width: 960px)
+    margin: 0
   #menu
     position: absolute
     .section
@@ -81,12 +89,21 @@ a,a:link
         margin-bottom: 0.5rem
   #content
     margin-left: 17rem
-    td.detail
-      line-height: 2em
-      margin: 0
-      padding: 0
-      .ui.label
-        line-height: 1em
-        i.icon
-          margin: 0 0 0 0.5em
+    @media screen and (max-width: 960px)
+      margin-left: 0
+    #pit-selector
+      padding: 1rem 0
+      background-color: rgba(#000,0.03)
+      +border-bottom-radius(0.3rem)
+      @media screen and (max-width: 960px)
+        padding: 1rem
+#panel, #guide
+  td.detail
+    line-height: 2em
+    margin: 0
+    padding: 0
+    .ui.label
+      line-height: 1em
+      i.icon
+        margin: 0 0 0 0.5em
 
