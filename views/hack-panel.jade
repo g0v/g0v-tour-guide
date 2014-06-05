@@ -2,9 +2,10 @@ extends hack
 
 block hackspace
 
-  include _hack-login
-
   #panel(ng-init="login='done';view=''")
+
+    include _hack-login
+
     nav#menu.mobile.hide
       //-a(href="hack-panel.html").item.panel 儀表版
       .section.title 填坑

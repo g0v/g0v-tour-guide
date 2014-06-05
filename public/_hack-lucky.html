@@ -1,1 +1,161 @@
-<div id="lucky" ng-init="display='none'"><div ng-click="display='software'" class="ui icon labeled button">技術部好手氣<i class="icon lab"></i></div><div ng-click="display='culture'" class="ui icon labeled button">文化部好手氣<i class="icon photo"></i></div><div ng-click="display='research'" class="ui icon labeled button">研究院好手氣<i class="icon book"></i></div><div ng-click="display='ai'" class="ui icon labeled button">工人院好手氣<i class="icon male"></i></div><table ng-show="display=='software'" class="ui table segment"><thead><tr><th>專案</th><th>坑</th><th>類型</th><th>坑址</th><th ng-show="login=='done'">填坑</th></tr></thead><tbody><tr><td><a href="" class="ui label">國會大代誌</a></td><td><a href="" ng-click="pit1Detail=!pit1Detail" class="with padding block display">controller debug blahblahblah</a></td><td><a href="" class="ui label">前端</a><a href="" class="ui label">angular</a></td><td><a href="" class="ui label">github</a></td><td ng-show="login=='done'"><div class="float right"><div class="ui icon button small green"><i class="icon add"></i></div></div></td></tr><tr ng-show="pit1Detail==true"><td colspan="5" class="detail"><ul><li>坑型<a href="" class="ui label">g0v 技術部</a><a href="" class="ui label">前端</a><a href="" class="ui label">angular</a>，坑址<a href="" class="ui label">github</a>，標記<a href="" class="ui label">bug<i class="icon external url"></i></a>，里程碑<a href="" class="ui label">OOO<i class="icon external url"></i></a>，目前狀態 open，指派給<a href="" class="ui label">Lee1092<i class="icon external url"></i></a></li><li>所屬專案<a href="" class="ui label">國會大代誌</a>，宗旨「blahblah潮短版簡介」，使用技術<a href="" class="ui label">Angular JS</a><a href="" class="ui label">Semantic UI</a><a href="" class="ui label">Sass</a><a href="" class="ui label">Compass</a><a href="" class="ui label">Node JS</a>，專案文件<a href="" class="ui label">hackfoldr<i class="icon external url"></i></a>，專案成果<a href="" class="ui label">網頁<i class="icon external url"></i></a></li></ul></td></tr><tr><td><a href="" class="ui label">基礎建設</a></td><td><a href="" ng-click="pit2Detail=!pit2Detail" class="with padding block display">專案整理、各專案長短版簡介撰寫</a></td><td><a href="" class="ui label">企畫</a></td><td><a href="" class="ui label">hackpad</a></td><td ng-show="login=='done'"><div class="float right"><div class="ui icon button small green"><i class="icon add"></i></div></div></td></tr><tr ng-show="pit2Detail==true"><td colspan="5" class="detail"><ul><li>blah 零時坑報 hackpad 上的坑詳細描述，步驟 123 要注意什麼…。</li><li>坑型<a href="" class="ui label">g0v 文化部</a><a href="" class="ui label">文案</a>，坑址<a href="" class="ui label">hackpad</a>，認領人<a href="" class="ui label">Lee1092<i class="icon external url"></i></a><a href="" class="ui label">Lee1092<i class="icon external url"></i></a><a href="" class="ui label">Lee1092<i class="icon external url"></i></a>，完成品<a href="" class="ui label">網頁<i class="icon external url"></i></a></li><li>所屬專案<a href="" class="ui label">基礎建設</a>，宗旨「blahblah潮短版簡介」，使用技術<a href="" class="ui label">Angular JS</a><a href="" class="ui label">Semantic UI</a><a href="" class="ui label">Sass</a><a href="" class="ui label">Compass</a><a href="" class="ui label">Node JS</a>，專案文件<a href="" class="ui label">hackfoldr<i class="icon external url"></i></a>，專案成果<a href="" class="ui label">網頁<i class="icon external url"></i></a></li></ul></td></tr><tr><td><a href="" class="ui label">萌典</a></td><td><a href="" ng-click="pit5Detail=!pit5Detail" class="with padding block display">這裡有批柴好便宜的</a></td><td><a href="" class="ui label">資料</a></td><td><a href="" class="ui label">github</a></td><td ng-show="login=='done'"><div class="float right"><div class="ui icon button small green"><i class="icon add"></i></div></div></td></tr><tr ng-show="pit5Detail==true"><td colspan="5" class="detail"><ul><li>坑型<a href="" class="ui label">g0v 技術部</a><a href="" class="ui label">前端</a>，標記<a href="" class="ui label">bug<i class="icon external url"></i></a>，里程碑<a href="" class="ui label">OOO<i class="icon external url"></i></a>，目前狀態 open，指派給<a href="" class="ui label">Lee1092<i class="icon external url"></i></a></li><li>所屬專案<a href="" class="ui label">國會大代誌</a>，宗旨「blahblah潮短版簡介」，使用技術<a href="" class="ui label">Angular JS</a><a href="" class="ui label">Semantic UI</a><a href="" class="ui label">Sass</a><a href="" class="ui label">Compass</a><a href="" class="ui label">Node JS</a>，專案文件<a href="" class="ui label">hackfoldr<i class="icon external url"></i></a>，專案成果<a href="" class="ui label">網頁<i class="icon external url"></i></a></li></ul></td></tr></tbody><tfoot><tr><td colspan="5"><a href="" class="ui right icon labeled button">所有技術部坑<i class="icon right arrow"></i></a></td></tr></tfoot></table><table ng-show="display=='culture'" class="ui table segment"><thead><tr><th>坑</th><th>類型</th><th>坑址</th></tr></thead><tbody><tr><td><a href="" class="ui label">國會大代誌</a>國會娘角色設計</td><td><a href="" class="ui label">插畫</a></td><td><a href="" class="ui label">hackpad</a></td></tr><tr><td><a href="" class="ui label">基礎建設</a>g0v 介紹 i18n 日文版</td><td><a href="" class="ui label">翻譯</a><a href="" class="ui label">transfix</a></td><td><a href="" class="ui label">hackpad</a></td></tr><tr><td><a href="" class="ui label">開源藝術示範區</a>小幫手之歌編曲</td><td><a href="" class="ui label">編曲</a></td><td><a href="" class="ui label">hackpad</a></td></tr></tbody><tfoot><tr><td colspan="5"><a href="" class="ui right icon labeled button">所有文化部坑<i class="icon right arrow"></i></a></td></tr></tfoot></table></div>
+
+<div id="lucky" ng-init="display='none'">
+  <div ng-click="display='software'" class="ui icon labeled small button">技術部好手氣<i class="icon lab"></i></div>
+  <div ng-click="display='culture'" class="ui icon labeled small button">文化部好手氣<i class="icon photo"></i></div>
+  <div ng-click="display='research'" class="ui icon labeled small button">研究院好手氣<i class="icon book"></i></div>
+  <div ng-click="display='ai'" class="ui icon labeled small button">工人院好手氣<i class="icon male"></i></div>
+  <table ng-show="display=='software'" class="ui table segment">
+    <thead>
+      <tr>
+        <th>專案</th>
+        <th>坑</th>
+        <th>類型</th>
+        <th>坑址</th>
+        <th ng-show="login=='done'">填坑</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="" class="ui label">國會大代誌</a></td>
+        <td><a href="" ng-click="pit1Detail=!pit1Detail" class="with padding block display">controller debug blahblahblah</a></td>
+        <td><a href="" class="ui label">前端</a><a href="" class="ui label">angular</a></td>
+        <td><a href="" class="ui label">github</a></td>
+        <td ng-show="login=='done'">
+          <div class="float right">
+            <div class="ui icon button small green"><i class="icon add"></i></div>
+          </div>
+        </td>
+      </tr>
+      <tr ng-show="pit1Detail==true">
+        <td colspan="5" class="detail">
+          <ul>
+            <li>坑型<a href="" class="ui label">g0v 技術部</a><a href="" class="ui label">前端</a><a href="" class="ui label">angular</a>，坑址<a href="" class="ui label">github</a>，標記<a href="" class="ui label">bug<i class="icon external url"></i></a>，里程碑<a href="" class="ui label">OOO<i class="icon external url"></i></a>，目前狀態 open，指派給<a href="" class="ui label">Lee1092<i class="icon external url"></i></a></li>
+            <li>所屬專案<a href="" class="ui label">國會大代誌</a>，宗旨「blahblah潮短版簡介」，使用技術<a href="" class="ui label">Angular JS</a><a href="" class="ui label">Semantic UI</a><a href="" class="ui label">Sass</a><a href="" class="ui label">Compass</a><a href="" class="ui label">Node JS</a>，專案文件<a href="" class="ui label">hackfoldr<i class="icon external url"></i></a>，專案成果<a href="" class="ui label">網頁<i class="icon external url"></i></a></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="" class="ui label">基礎建設</a></td>
+        <td><a href="" ng-click="pit2Detail=!pit2Detail" class="with padding block display">專案整理、各專案長短版簡介撰寫</a></td>
+        <td><a href="" class="ui label">企畫</a></td>
+        <td><a href="" class="ui label">hackpad</a></td>
+        <td ng-show="login=='done'">
+          <div class="float right">
+            <div class="ui icon button small green"><i class="icon add"></i></div>
+          </div>
+        </td>
+      </tr>
+      <tr ng-show="pit2Detail==true">
+        <td colspan="5" class="detail">
+          <ul>
+            <li>blah 零時坑報 hackpad 上的坑詳細描述，步驟 123 要注意什麼…。</li>
+            <li>坑型<a href="" class="ui label">g0v 文化部</a><a href="" class="ui label">文案</a>，坑址<a href="" class="ui label">hackpad</a>，認領人<a href="" class="ui label">Lee1092<i class="icon external url"></i></a><a href="" class="ui label">Lee1092<i class="icon external url"></i></a><a href="" class="ui label">Lee1092<i class="icon external url"></i></a>，完成品<a href="" class="ui label">網頁<i class="icon external url"></i></a></li>
+            <li>所屬專案<a href="" class="ui label">基礎建設</a>，宗旨「blahblah潮短版簡介」，使用技術<a href="" class="ui label">Angular JS</a><a href="" class="ui label">Semantic UI</a><a href="" class="ui label">Sass</a><a href="" class="ui label">Compass</a><a href="" class="ui label">Node JS</a>，專案文件<a href="" class="ui label">hackfoldr<i class="icon external url"></i></a>，專案成果<a href="" class="ui label">網頁<i class="icon external url"></i></a></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="" class="ui label">萌典</a></td>
+        <td><a href="" ng-click="pit5Detail=!pit5Detail" class="with padding block display">這裡有批柴好便宜的</a></td>
+        <td><a href="" class="ui label">資料</a></td>
+        <td><a href="" class="ui label">github</a></td>
+        <td ng-show="login=='done'">
+          <div class="float right">
+            <div class="ui icon button small green"><i class="icon add"></i></div>
+          </div>
+        </td>
+      </tr>
+      <tr ng-show="pit5Detail==true">
+        <td colspan="5" class="detail">
+          <ul>
+            <li>坑型<a href="" class="ui label">g0v 技術部</a><a href="" class="ui label">前端</a>，標記<a href="" class="ui label">bug<i class="icon external url"></i></a>，里程碑<a href="" class="ui label">OOO<i class="icon external url"></i></a>，目前狀態 open，指派給<a href="" class="ui label">Lee1092<i class="icon external url"></i></a></li>
+            <li>所屬專案<a href="" class="ui label">國會大代誌</a>，宗旨「blahblah潮短版簡介」，使用技術<a href="" class="ui label">Angular JS</a><a href="" class="ui label">Semantic UI</a><a href="" class="ui label">Sass</a><a href="" class="ui label">Compass</a><a href="" class="ui label">Node JS</a>，專案文件<a href="" class="ui label">hackfoldr<i class="icon external url"></i></a>，專案成果<a href="" class="ui label">網頁<i class="icon external url"></i></a></li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="5"><a href="" class="ui right icon labeled small button">所有技術部坑<i class="icon right arrow"></i></a></td>
+      </tr>
+    </tfoot>
+  </table>
+  <table ng-show="display=='culture'" class="ui table segment">
+    <thead>
+      <tr>
+        <th>專案</th>
+        <th>坑</th>
+        <th>類型</th>
+        <th>坑址</th>
+        <th ng-show="login=='done'">填坑</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="" class="ui label">國會大代誌</a></td>
+        <td><a href="" ng-click="pit7Detail=!pit7Detail" class="with padding block display">國會娘角色設計</a></td>
+        <td><a href="" class="ui label">插畫</a></td>
+        <td><a href="" class="ui label">hackpad</a></td>
+        <td ng-show="login=='done'">
+          <div class="float right">
+            <div class="ui icon button small green"><i class="icon add"></i></div>
+          </div>
+        </td>
+      </tr>
+      <tr ng-show="pit7Detail==true">
+        <td colspan="5" class="detail">
+          <ul>
+            <li>blah 零時坑報 hackpad 上的坑詳細描述，步驟 123 要注意什麼…。</li>
+            <li>坑型<a href="" class="ui label">g0v 文化部</a><a href="" class="ui label">文案</a>，坑址<a href="" class="ui label">hackpad</a>，認領人<a href="" class="ui label">Lee1092<i class="icon external url"></i></a><a href="" class="ui label">Lee1092<i class="icon external url"></i></a><a href="" class="ui label">Lee1092<i class="icon external url"></i></a>，完成品<a href="" class="ui label">網頁<i class="icon external url"></i></a></li>
+            <li>所屬專案<a href="" class="ui label">基礎建設</a>，宗旨「blahblah潮短版簡介」，使用技術<a href="" class="ui label">Angular JS</a><a href="" class="ui label">Semantic UI</a><a href="" class="ui label">Sass</a><a href="" class="ui label">Compass</a><a href="" class="ui label">Node JS</a>，專案文件<a href="" class="ui label">hackfoldr<i class="icon external url"></i></a>，專案成果<a href="" class="ui label">網頁<i class="icon external url"></i></a></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="" class="ui label">基礎建設</a></td>
+        <td><a href="" ng-click="pit8Detail=!pit8Detail" class="with padding block display">g0v 介紹 i18n 日文版</a></td>
+        <td><a href="" class="ui label">翻譯</a><a href="" class="ui label">transfix</a></td>
+        <td><a href="" class="ui label">hackpad</a></td>
+        <td ng-show="login=='done'">
+          <div class="float right">
+            <div class="ui icon button small green"><i class="icon add"></i></div>
+          </div>
+        </td>
+      </tr>
+      <tr ng-show="pit8Detail==true">
+        <td colspan="5" class="detail">
+          <ul>
+            <li>blah 零時坑報 hackpad 上的坑詳細描述，步驟 123 要注意什麼…。</li>
+            <li>坑型<a href="" class="ui label">g0v 文化部</a><a href="" class="ui label">文案</a>，坑址<a href="" class="ui label">hackpad</a>，認領人<a href="" class="ui label">Lee1092<i class="icon external url"></i></a><a href="" class="ui label">Lee1092<i class="icon external url"></i></a><a href="" class="ui label">Lee1092<i class="icon external url"></i></a>，完成品<a href="" class="ui label">網頁<i class="icon external url"></i></a></li>
+            <li>所屬專案<a href="" class="ui label">基礎建設</a>，宗旨「blahblah潮短版簡介」，使用技術<a href="" class="ui label">Angular JS</a><a href="" class="ui label">Semantic UI</a><a href="" class="ui label">Sass</a><a href="" class="ui label">Compass</a><a href="" class="ui label">Node JS</a>，專案文件<a href="" class="ui label">hackfoldr<i class="icon external url"></i></a>，專案成果<a href="" class="ui label">網頁<i class="icon external url"></i></a></li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td><a href="" class="ui label">開源藝術示範區</a></td>
+        <td><a href="" ng-click="pit9Detail=!pit9Detail" class="with padding block display">小幫手之歌編曲</a></td>
+        <td><a href="" class="ui label">編曲</a></td>
+        <td><a href="" class="ui label">hackpad</a></td>
+        <td ng-show="login=='done'">
+          <div class="float right">
+            <div class="ui icon button small green"><i class="icon add"></i></div>
+          </div>
+        </td>
+      </tr>
+      <tr ng-show="pit9Detail==true">
+        <td colspan="5" class="detail">
+          <ul>
+            <li>blah 零時坑報 hackpad 上的坑詳細描述，步驟 123 要注意什麼…。</li>
+            <li>坑型<a href="" class="ui label">g0v 文化部</a><a href="" class="ui label">文案</a>，坑址<a href="" class="ui label">hackpad</a>，認領人<a href="" class="ui label">Lee1092<i class="icon external url"></i></a><a href="" class="ui label">Lee1092<i class="icon external url"></i></a><a href="" class="ui label">Lee1092<i class="icon external url"></i></a>，完成品<a href="" class="ui label">網頁<i class="icon external url"></i></a></li>
+            <li>所屬專案<a href="" class="ui label">基礎建設</a>，宗旨「blahblah潮短版簡介」，使用技術<a href="" class="ui label">Angular JS</a><a href="" class="ui label">Semantic UI</a><a href="" class="ui label">Sass</a><a href="" class="ui label">Compass</a><a href="" class="ui label">Node JS</a>，專案文件<a href="" class="ui label">hackfoldr<i class="icon external url"></i></a>，專案成果<a href="" class="ui label">網頁<i class="icon external url"></i></a></li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="5"><a href="" class="ui right icon labeled small button">所有文化部坑<i class="icon right arrow"></i></a></td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

@@ -68,83 +68,89 @@ a.block.display, a:link.block.display {
   float: right;
 }
 
-@media screen and (max-width: 960px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000350}}
+.light.yellow {
+  background-color: rgba(255, 255, 0, 0.1);
+}
+
+@media screen and (max-width: 960px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000353}}
   .mobile.hide {
     display: none;
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000355}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000357}}
+.indent {
+  margin-left: 2rem;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000361}}
 #software .ui.image {
   width: 5rem;
   height: 5rem;
   float: left;
   margin-left: 1rem;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000360}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000366}}
 #software .summary {
   margin-left: 7rem;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000363}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000369}}
 #software .summary .platform .label {
   margin: 0.2rem;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000366}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000372}}
 #moc .item {
   margin: 1rem;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000374}}
 #moc .download.ui.label {
   position: absolute;
   z-index: 9;
   left: -1rem;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000373}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000379}}
 #guide {
   margin: 1rem;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000375}}
-#guide .indent {
-  margin-left: 2rem;
-}
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000378}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000382}}
 #panel {
   margin: 1rem;
   position: relative;
 }
 @media screen and (max-width: 960px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000378}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000382}}
   #panel {
     margin: 0;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000387}}
 #panel #menu {
   position: absolute;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000386}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000390}}
 #panel #menu .section.title {
   padding: 0.5rem;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000388}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000392}}
 #panel #menu .section.menu {
   margin-bottom: 0.5rem;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000394}}
 #panel #content {
   margin-left: 17rem;
 }
 @media screen and (max-width: 960px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000394}}
   #panel #content {
     margin-left: 0;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000394}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000398}}
 #panel #content #pit-selector {
   padding: 1rem 0;
   background-color: rgba(0, 0, 0, 0.03);
@@ -156,23 +162,23 @@ a.block.display, a:link.block.display {
   border-bottom-right-radius: 0.3rem;
 }
 @media screen and (max-width: 960px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000394}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\0000398}}
   #panel #content #pit-selector {
     padding: 1rem;
   }
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\00003101}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\00003105}}
 #panel td.detail, #guide td.detail {
   line-height: 2em;
   margin: 0;
   padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\00003105}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\00003109}}
 #panel td.detail .ui.label, #guide td.detail .ui.label {
   line-height: 1em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\00003107}}
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\00003111}}
 #panel td.detail .ui.label i.icon, #guide td.detail .ui.label i.icon {
   margin: 0 0 0 0.5em;
 }
