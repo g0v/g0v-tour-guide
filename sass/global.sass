@@ -24,8 +24,9 @@ a,a:link
 
 .ui.menu
   margin: 0
+#nav .ui.menu
   .menu .item
-    i.icon.arrow, i.icon.url, i.icon.setting
+    i.icon
       margin: 0 0 0 1rem
 
 // patch semantic ui black active button bug
@@ -46,6 +47,12 @@ a,a:link
 // float element
 .float.right
   float: right
+
+.align.right
+  text-align: right
+
+.single.line
+  line-height: 1em
 
 .light.yellow
   background-color: rgba(yellow,0.1)
@@ -108,15 +115,27 @@ a,a:link
       margin-left: 0
     #pit-selector
       padding: 1rem 0
-      background-color: rgba(#000,0.03)
-      +border-bottom-radius(0.3rem)
       @media screen and (max-width: 960px)
         padding: 1rem
-#panel, #guide
-  td.detail
-    line-height: 2em
-    margin: 0
-    padding: 0
+      .ui.form
+        margin-bottom: -1rem
   #pit-id
     td.detail
       padding: 0.5rem
+    #social-share
+      padding: 1rem
+
+.two.line.height
+  line-height: 2em
+
+#panel, #guide
+  tr.detail
+    .ui.divider
+      margin: 0.25rem 0
+    p
+      line-height: 2rem
+      margin: 0
+
+.light.gray.extended.block
+  background-color: rgba(#000,0.03)
+  +border-bottom-radius(0.3rem)

@@ -33,23 +33,47 @@ block content
           a.item(ng-click="showFilter=!showFilter") 手動選坑
             i.icon.arrow.down(ng-show="showFilter==false")
             i.icon.arrow.up(ng-show="showFilter==true")
-          .item.right
-            .ui.radio.checkbox
-              input(name="",checked="",type="radio")
-              label 未完成的
-            .ui.radio.checkbox
-              input(name="",type="radio")
-              label 已完成的
-            .ui.radio.checkbox
-              input(name="",type="radio")
-              label 全部
-        #pit-selector.ui.four.column.stackable.divided.grid(ng-show="showFilter==true")
-          .row
+          .right.menu
+            .ui.icon.button.item
+              i.icon.left.arrow
+            .ui.dropdown.item 1
+              i.icon.dropdown
+              .menu
+                .item 1
+                .item 2
+                .item 3
+                .item 4
+            .ui.icon.button.item
+              i.icon.right.arrow
+        #pit-selector(ng-show="showFilter==true").light.gray.extended.block
+          .ui.divided.grid: .column
+            .ui.form
+              .inline.field
+                .ui.radio.checkbox
+                  input(name="",type="checkbox")
+                  label 全部狀態
+                .ui.radio.checkbox
+                  input(name="",checked="",type="checkbox")
+                  label 特定狀態
+                .ui.checkbox
+                  input(name="",checked="",type="checkbox")
+                  label 待認領
+                .ui.checkbox
+                  input(name="",type="checkbox")
+                  label 正在填
+                .ui.checkbox
+                  input(name="",type="checkbox")
+                  label 已填完
+                .ui.checkbox
+                  input(name="",type="checkbox")
+                  label 過期未填
+          .ui.divider
+          .ui.four.column.stackable.divided.grid
             .column
               .ui.form
                 .inline.field
                   .ui.radio.checkbox
-                    input(type="checkbox")
+                    input(checked="",type="checkbox")
                     label 所有專案
                 .inline.field
                   .ui.radio.checkbox
@@ -76,7 +100,7 @@ block content
               .ui.form
                 .inline.field
                   .ui.radio.checkbox
-                    input(type="checkbox")
+                    input(checked="",type="checkbox")
                     label 所有部門
                 .inline.field
                   .ui.radio.checkbox
@@ -103,7 +127,7 @@ block content
               .ui.form
                 .inline.field
                   .ui.radio.checkbox
-                    input(type="checkbox")
+                    input(checked="",type="checkbox")
                     label 所有類型
                 .inline.field
                   .ui.radio.checkbox
@@ -130,18 +154,20 @@ block content
               .ui.form
                 .inline.field
                   .ui.radio.checkbox
-                    input(type="checkbox")
+                    input(checked="",type="checkbox")
                     label 所有技術 / 工具
                 .inline.field
                   .ui.radio.checkbox
                     input(type="checkbox")
                     label 特定技術 / 工具
                 .indent
-        table.ui.table.segment
+        table#pit-list.ui.table.segment
           thead
             tr
               th 專案
+                .ui.label 99
               th 坑
+                .ui.label 999
               th 類型
               th 坑址
               th(ng-show="login=='done'") 填坑

@@ -7,12 +7,22 @@ block content
         i.icon.left.arrow
         | 回上一頁
       .item
-        h3
-          .ui.label.right.margin 坑
-          | 專案整理、各專案長短版簡介撰寫
+        .ui.label.right.margin 坑
+        | 專案整理、各專案長短版簡介撰寫
       .right.menu
-        .ui.icon.button.small.green.item(ng-show="login=='done'")
-          i.icon.add      
+        .ui.icon.labeled.button.green.item(ng-show="login=='done' && !added",ng-click="added=!added") 加到清單
+          i.icon.add
+        .ui.icon.labeled.button.green.disabled.item(ng-show="login=='done' && added",ng-click="added=!added") 已加到清單
+          i.icon.checkmark.checked
+        .ui.icon.labeled.button.item(ng-click="socialShare=!socialShare") 分享
+          i.icon.forward.mail
+    #social-share(ng-show="socialShare").light.gray.extended.block
+      .ui.icon.labeled.small.button google+
+        i.icon.google.plus
+      .ui.icon.labeled.small.button twitter
+        i.icon.twitter
+      .ui.icon.labeled.small.button facebook
+        i.icon.facebook
     section
       p blah 零時坑報 hackpad 上的坑詳細描述，步驟 123 要注意什麼…。
       .ui.two.column.stackable.grid
@@ -66,7 +76,8 @@ block content
                 td.detail 專案成果
                   a(href="").ui.label.left.margin 網頁
                     i.icon.external.url
-      p [tbd] 追蹤此坑的人、可能適合此坑的人、此坑被瀏覽過幾次、類似的坑、分享按鈕……etc.
+      .ui.horizontal.divider 可能填坑的人
+      .ui.horizontal.divider 類似的坑
 
 block script
   script.

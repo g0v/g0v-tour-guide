@@ -159,14 +159,19 @@
         <div id="pit-id">
           <nav class="ui menu"><a href="hack-panel-pit.html" class="item"><i class="icon left arrow"></i>回上一頁</a>
             <div class="item">
-              <h3>
-                <div class="ui label right margin">坑</div>專案整理、各專案長短版簡介撰寫
-              </h3>
+              <div class="ui label right margin">坑</div>專案整理、各專案長短版簡介撰寫
             </div>
             <div class="right menu">
-              <div ng-show="login=='done'" class="ui icon button small green item"><i class="icon add">     </i></div>
+              <div ng-show="login=='done' &amp;&amp; !added" ng-click="added=!added" class="ui icon labeled button green item">加到清單<i class="icon add"></i></div>
+              <div ng-show="login=='done' &amp;&amp; added" ng-click="added=!added" class="ui icon labeled button green disabled item">已加到清單<i class="icon checkmark checked"></i></div>
+              <div ng-click="socialShare=!socialShare" class="ui icon labeled button item">分享<i class="icon forward mail"></i></div>
             </div>
           </nav>
+          <div id="social-share" ng-show="socialShare" class="light gray extended block">
+            <div class="ui icon labeled small button">google+<i class="icon google plus"></i></div>
+            <div class="ui icon labeled small button">twitter<i class="icon twitter"></i></div>
+            <div class="ui icon labeled small button">facebook<i class="icon facebook"></i></div>
+          </div>
           <section>
             <p>blah 零時坑報 hackpad 上的坑詳細描述，步驟 123 要注意什麼…。</p>
             <div class="ui two column stackable grid">
@@ -222,7 +227,8 @@
                 </table>
               </div>
             </div>
-            <p>[tbd] 追蹤此坑的人、可能適合此坑的人、此坑被瀏覽過幾次、類似的坑、分享按鈕……etc.</p>
+            <div class="ui horizontal divider">可能填坑的人</div>
+            <div class="ui horizontal divider">類似的坑</div>
           </section>
         </div>
       </section>
