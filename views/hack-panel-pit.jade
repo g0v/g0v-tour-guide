@@ -1,13 +1,13 @@
 extends hack-panel
 
 block content
-  nav.ui.menu(ng-init="pitView='all'")
-    a(href="",ng-click="pitView='dig'",ng-class="{active:pitView=='dig'}",ng-show="login=='done'").item 我挖的
+  nav.ui.menu(ng-init="pitView='all';pitViewMode='normal'")
+    //-a(href="",ng-click="pitView='dig'",ng-class="{active:pitView=='dig'}",ng-show="login=='done'").item 我挖的
       .ui.label.purple 3
-    a(href="",ng-click="pitView='fill'",ng-class="{active:pitView=='fill'}",ng-show="login=='done'").item 我填的
-      .ui.label.red 4 
-    //-a(href="",ng-click="pitView='interest'",ng-class="{active:pitView=='interest'}",ng-show="login=='done'").item 挖給我填的
-      .ui.label.yellow 10 
+    //-a(href="",ng-click="pitView='fill'",ng-class="{active:pitView=='fill'}",ng-show="login=='done'").item 我填的
+      .ui.label.red 4
+    a(href="",ng-click="pitView='mine'",ng-class="{active:pitView=='mine'}",ng-show="login=='done'").item 我的
+      .ui.label.red {{ pitCount.ongoing }}
     a(href="",ng-class="{active:pitView=='all'}",ng-click="pitView='all'").item 所有坑
       .ui.label 999
     .right.menu
@@ -168,15 +168,47 @@ block content
                 .ui.label 99
               th 坑
                 .ui.label 999
-              th 類型
-              th 坑址
+              th(ng-show="pitView=='all'") 類型
+              th(ng-show="pitView=='all'") 坑址
               th(ng-show="login=='done'") 填坑
           tbody
             include _hack-pit-select-software
-            include _hack-pit-select-selected
             include _hack-pit-select-culture
+      .title
+        i.icon.dropdown
+        | 統計
+      .content
+        p 某種 data visulization 顯示各專案各類型個部門多少坑… etc.
 
-  section#dig(ng-show="pitView=='dig'")
+  section#mine(ng-show="pitView=='mine'")
+    .wrapper.for.angular.show.hide(ng-hide="login!='done'")
+      .ui.fluid.basic.accordion
+        .title.active(ng-click="pitViewMode='normal'")
+          i.icon.dropdown
+          | 進行中
+          .ui.label.red {{ pitCount.ongoing }}
+        .content.active
+          table#pit-list.ui.table.segment
+            tbody.ui.basic.accordion
+              include _hack-pit-select-software
+              include _hack-pit-select-culture
+        .title(ng-click="pitViewMode='archive'")
+          i.icon.dropdown
+          | 封存
+          .ui.label {{ pitCount.archived }}
+        .content
+          table#pit-list.ui.table.segment
+            tbody.ui.basic.accordion
+              include _hack-pit-select-software
+              include _hack-pit-select-culture
+        .title
+          i.icon.dropdown
+          | 統計
+        .content
+          p 某種 data visulization 顯示各專案各類型個部門多少坑… etc.
+
+
+  //-section#dig(ng-show="pitView=='dig'")
     .wrapper.for.angular.show.hide(ng-hide="login!='done'")
       .ui.fluid.basic.accordion
         .title.active
@@ -189,7 +221,7 @@ block content
     .wrapper.for.angular.show.hide(ng-hide="login!='done'")
       p 推薦
 
-  section#fill(ng-show="pitView=='fill'")
+  //-section#fill(ng-show="pitView=='fill'")
     .wrapper.for.angular.show.hide(ng-hide="login!='done'")
       .ui.fluid.basic.accordion
         .title.active
@@ -594,3 +626,11 @@ block script
   script.
     $("#nav .panel").addClass("active");
     $("#menu .pit").addClass("active");
+    $(".add.to").click(function(){
+      $(this).addClass("disabled");
+    });
+    $(".mark.as.done, .mark.as.active, .remove.from").click(function(){
+      $(this).addClass("disabled");
+      $(this).parents("tr").hide(2000);
+    });
+

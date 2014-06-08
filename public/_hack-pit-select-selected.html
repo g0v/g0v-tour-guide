@@ -2,11 +2,14 @@
 <tr>
   <td><a href="" class="ui label">基礎建設</a></td>
   <td><a href="" ng-click="pitDetail=10" class="with padding block display">專案整理、各專案長短版簡介撰寫</a></td>
-  <td><a href="" class="ui label">企畫</a></td>
-  <td><a href="" class="ui label">hackpad</a></td>
+  <td ng-show="pitView=='all'"><a href="" class="ui label">企畫</a></td>
+  <td ng-show="pitView=='all'"><a href="" class="ui label">hackpad</a></td>
   <td ng-show="login=='done'">
     <div class="align right">
-      <div class="ui icon button small green disabled"><i class="icon add"></i></div>
+      <div ng-show="pitView=='all'" ng-click="pitCount.ongoing=pitCount.ongoing+1" class="ui icon button small green add to"><i class="icon add"></i></div>
+      <div ng-show="pitView=='mine' &amp;&amp; pitViewMode=='normal'" ng-click="pitCount.ongoing=pitCount.ongoing-1; pitCount.archived=pitCount.archived+1" class="ui icon button small green mark as done"><i class="icon checkmark checked"></i></div>
+      <div ng-show="pitView=='mine' &amp;&amp; pitViewMode=='archive'" ng-click="pitCount.ongoing=pitCount.ongoing+1; pitCount.archived=pitCount.archived-1" class="ui icon button small mark as active"><i class="icon undo"></i></div>
+      <div ng-show="pitView=='mine'" class="ui icon button small black remove from"><i class="icon remove"></i></div>
     </div>
   </td>
 </tr>
@@ -24,13 +27,16 @@
 <tr>
   <td><a href="" class="ui label">國會大代誌</a></td>
   <td><a href="" ng-click="pitDetail=11" class="with padding block display">國會娘角色設計</a></td>
-  <td><a href="" class="ui label">插畫
-      <td><a href="" class="ui label">hackpad</a></td>
-      <td ng-show="login=='done'">
-        <div class="align right">
-          <div class="ui icon button small green disabled"><i class="icon add"></i></div>
-        </div>
-      </td></a></td>
+  <td ng-show="pitView=='all'"><a href="" class="ui label">插畫</a></td>
+  <td ng-show="pitView=='all'"><a href="" class="ui label">hackpad</a></td>
+  <td ng-show="login=='done'">
+    <div class="align right">
+      <div ng-show="pitView=='all'" ng-click="pitCount.ongoing=pitCount.ongoing+1" class="ui icon button small green add to"><i class="icon add"></i></div>
+      <div ng-show="pitView=='mine' &amp;&amp; pitViewMode=='normal'" ng-click="pitCount.ongoing=pitCount.ongoing-1; pitCount.archived=pitCount.archived+1" class="ui icon button small green mark as done"><i class="icon checkmark checked"></i></div>
+      <div ng-show="pitView=='mine' &amp;&amp; pitViewMode=='archive'" ng-click="pitCount.ongoing=pitCount.ongoing+1; pitCount.archived=pitCount.archived-1" class="ui icon button small mark as active"><i class="icon undo"></i></div>
+      <div ng-show="pitView=='mine'" class="ui icon button small black remove from"><i class="icon remove"></i></div>
+    </div>
+  </td>
 </tr>
 <tr ng-show="pitDetail==11" class="detail">
   <td colspan="5">

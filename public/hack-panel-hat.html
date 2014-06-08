@@ -121,7 +121,7 @@
         </div>
       </div>
     </nav>
-    <div id="panel" ng-init="login='done';view=''">
+    <div id="panel" ng-init="login='done';pitCount={ongoing:10,archived:99}">
       <div id="login" ng-show="login=='yes'" class="ui form segment light yellow">
         <p>黑客，歡迎！登入為：</p>
         <div ng-click="login='done'" class="ui icon labeled button">github<i class="icon github"></i></div>
@@ -134,8 +134,7 @@
         <div class="section title">填坑</div>
         <div class="section ui vertical menu inverted"><a href="hack-panel-pit.html" class="item pit">坑
             <div class="ui label">999</div>
-            <div ng-show="login=='done'" class="ui label red">4</div>
-            <div ng-show="login=='done'" class="ui label purple">3</div></a><a href="hack-panel-project.html" class="item project">專案
+            <div ng-show="login=='done'" class="ui label red">{{ pitCount.ongoing }}</div></a><a href="hack-panel-project.html" class="item project">專案
             <div class="ui label">99</div>
             <div ng-show="login=='done'" class="ui label blue">3</div></a><a href="hack-panel-idea.html" class="item idea">零感
             <div class="ui label">88</div>

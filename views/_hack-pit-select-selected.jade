@@ -3,12 +3,10 @@ tr
     a(href="").ui.label 基礎建設
   td
     a(href="",ng-click="pitDetail=10").with.padding.block.display 專案整理、各專案長短版簡介撰寫
-  td: a(href="").ui.label 企畫
-  td: a(href="").ui.label hackpad
+  td(ng-show="pitView=='all'"): a(href="").ui.label 企畫
+  td(ng-show="pitView=='all'"): a(href="").ui.label hackpad
   td(ng-show="login=='done'")
-    .align.right
-      .ui.icon.button.small.green.disabled
-        i.icon.add
+    include _hack-pit-action-buttons
 tr(ng-show="pitDetail==10").detail
   td(colspan="5")
     p blah 零時坑報 hackpad 上的坑詳細描述，步驟 123 要注意什麼…。
@@ -52,12 +50,10 @@ tr
     a(href="").ui.label 國會大代誌
   td
     a(href="",ng-click="pitDetail=11").with.padding.block.display 國會娘角色設計
-  td: a(href="").ui.label 插畫
-    td: a(href="").ui.label hackpad
-    td(ng-show="login=='done'")
-      .align.right
-        .ui.icon.button.small.green.disabled
-          i.icon.add
+  td(ng-show="pitView=='all'"): a(href="").ui.label 插畫
+  td(ng-show="pitView=='all'"): a(href="").ui.label hackpad
+  td(ng-show="login=='done'")
+    include _hack-pit-action-buttons
 tr(ng-show="pitDetail==11").detail
   td(colspan="5")
     p blah 零時坑報 hackpad 上的坑詳細描述，步驟 123 要注意什麼…。

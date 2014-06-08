@@ -2,11 +2,14 @@
 <tr>
   <td><a href="" class="ui label">國會大代誌</a></td>
   <td><a href="" ng-click="pitDetail=7" class="with padding block display">國會娘角色設計</a></td>
-  <td><a href="" class="ui label">插畫</a></td>
-  <td><a href="" class="ui label">hackpad</a></td>
+  <td ng-show="pitView=='all'"><a href="" class="ui label">插畫</a></td>
+  <td ng-show="pitView=='all'"><a href="" class="ui label">hackpad</a></td>
   <td ng-show="login=='done'">
     <div class="align right">
-      <div class="ui icon button small green"><i class="icon add"></i></div>
+      <div ng-show="pitView=='all'" ng-click="pitCount.ongoing=pitCount.ongoing+1" class="ui icon button small green add to"><i class="icon add"></i></div>
+      <div ng-show="pitView=='mine' &amp;&amp; pitViewMode=='normal'" ng-click="pitCount.ongoing=pitCount.ongoing-1; pitCount.archived=pitCount.archived+1" class="ui icon button small green mark as done"><i class="icon checkmark checked"></i></div>
+      <div ng-show="pitView=='mine' &amp;&amp; pitViewMode=='archive'" ng-click="pitCount.ongoing=pitCount.ongoing+1; pitCount.archived=pitCount.archived-1" class="ui icon button small mark as active"><i class="icon undo"></i></div>
+      <div ng-show="pitView=='mine'" class="ui icon button small black remove from"><i class="icon remove"></i></div>
     </div>
   </td>
 </tr>
@@ -24,11 +27,14 @@
 <tr>
   <td><a href="" class="ui label">基礎建設</a></td>
   <td><a href="" ng-click="pitDetail=8" class="with padding block display">g0v 介紹 i18n 日文版</a></td>
-  <td><a href="" class="ui label">翻譯</a><a href="" class="ui label">transfix</a></td>
-  <td><a href="" class="ui label">hackpad</a></td>
+  <td ng-show="pitView=='all'"><a href="" class="ui label">翻譯</a><a href="" class="ui label">transfix</a></td>
+  <td ng-show="pitView=='all'"><a href="" class="ui label">hackpad</a></td>
   <td ng-show="login=='done'">
     <div class="align right">
-      <div class="ui icon button small green"><i class="icon add"></i></div>
+      <div ng-show="pitView=='all'" ng-click="pitCount.ongoing=pitCount.ongoing+1" class="ui icon button small green add to"><i class="icon add"></i></div>
+      <div ng-show="pitView=='mine' &amp;&amp; pitViewMode=='normal'" ng-click="pitCount.ongoing=pitCount.ongoing-1; pitCount.archived=pitCount.archived+1" class="ui icon button small green mark as done"><i class="icon checkmark checked"></i></div>
+      <div ng-show="pitView=='mine' &amp;&amp; pitViewMode=='archive'" ng-click="pitCount.ongoing=pitCount.ongoing+1; pitCount.archived=pitCount.archived-1" class="ui icon button small mark as active"><i class="icon undo"></i></div>
+      <div ng-show="pitView=='mine'" class="ui icon button small black remove from"><i class="icon remove"></i></div>
     </div>
   </td>
 </tr>
@@ -46,11 +52,14 @@
 <tr>
   <td><a href="" class="ui label">開源藝術示範區</a></td>
   <td><a href="" ng-click="pitDetail=9" class="with padding block display">小幫手之歌編曲</a></td>
-  <td><a href="" class="ui label">編曲</a></td>
-  <td><a href="" class="ui label">hackpad</a></td>
+  <td ng-show="pitView=='all'"><a href="" class="ui label">編曲</a></td>
+  <td ng-show="pitView=='all'"><a href="" class="ui label">hackpad</a></td>
   <td ng-show="login=='done'">
     <div class="align right">
-      <div class="ui icon button small green"><i class="icon add"></i></div>
+      <div ng-show="pitView=='all'" ng-click="pitCount.ongoing=pitCount.ongoing+1" class="ui icon button small green add to"><i class="icon add"></i></div>
+      <div ng-show="pitView=='mine' &amp;&amp; pitViewMode=='normal'" ng-click="pitCount.ongoing=pitCount.ongoing-1; pitCount.archived=pitCount.archived+1" class="ui icon button small green mark as done"><i class="icon checkmark checked"></i></div>
+      <div ng-show="pitView=='mine' &amp;&amp; pitViewMode=='archive'" ng-click="pitCount.ongoing=pitCount.ongoing+1; pitCount.archived=pitCount.archived-1" class="ui icon button small mark as active"><i class="icon undo"></i></div>
+      <div ng-show="pitView=='mine'" class="ui icon button small black remove from"><i class="icon remove"></i></div>
     </div>
   </td>
 </tr>

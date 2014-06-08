@@ -3,14 +3,12 @@ tr
     a(href="").ui.label 國會大代誌
   td
     a(href="",ng-click="pitDetail=1").with.padding.block.display controller debug blahblahblah
-  td
+  td(ng-show="pitView=='all'")
     a(href="").ui.label 前端
     a(href="").ui.label angular
-  td: a(href="").ui.label github
+  td(ng-show="pitView=='all'"): a(href="").ui.label github
   td(ng-show="login=='done'")
-    .align.right
-      .ui.icon.button.small.green
-        i.icon.add
+    include _hack-pit-action-buttons
 tr(ng-show="pitDetail==1").detail
   td(colspan="5")
     p
@@ -54,12 +52,10 @@ tr
     a(href="").ui.label 基礎建設
   td
     a(href="",ng-click="pitDetail=2").with.padding.block.display 專案整理、各專案長短版簡介撰寫
-  td: a(href="").ui.label 企畫
-  td: a(href="").ui.label hackpad
+  td(ng-show="pitView=='all'"): a(href="").ui.label 企畫
+  td(ng-show="pitView=='all'"): a(href="").ui.label hackpad
   td(ng-show="login=='done'")
-    .align.right
-      .ui.icon.button.small.green
-        i.icon.add
+    include _hack-pit-action-buttons
 tr(ng-show="pitDetail==2").detail
   td(colspan="5")
     p blah 零時坑報 hackpad 上的坑詳細描述，步驟 123 要注意什麼…。
@@ -103,12 +99,10 @@ tr
     a(href="").ui.label 萌典
   td
     a(href="",ng-click="pitDetail=3").with.padding.block.display 這裡有批柴好便宜的
-  td: a(href="").ui.label 資料
-  td: a(href="").ui.label github
+  td(ng-show="pitView=='all'"): a(href="").ui.label 資料
+  td(ng-show="pitView=='all'"): a(href="").ui.label github
   td(ng-show="login=='done'")
-    .align.right
-      .ui.icon.button.small.green
-        i.icon.add
+    include _hack-pit-action-buttons
 tr(ng-show="pitDetail==3").detail
   td(colspan="5")
     p
