@@ -161,8 +161,7 @@
               <div class="ui label right margin">坑</div>專案整理、各專案長短版簡介撰寫
             </div>
             <div class="right menu">
-              <div ng-show="login=='done' &amp;&amp; !added" ng-click="added=!added" class="ui icon labeled button green item">加到清單<i class="icon add"></i></div>
-              <div ng-show="login=='done' &amp;&amp; added" ng-click="added=!added" class="ui icon labeled button green disabled item">已加到清單<i class="icon checkmark checked"></i></div>
+              <div ng-show="login=='done'" class="ui icon labeled button green item add">加到清單<i class="icon add"></i></div>
               <div ng-click="socialShare=!socialShare" class="ui icon labeled button item">分享<i class="icon forward mail"></i></div>
             </div>
           </nav>
@@ -226,8 +225,180 @@
                 </table>
               </div>
             </div>
-            <div class="ui horizontal divider">可能填坑的人</div>
+            <div class="ui horizontal divider">追蹤此坑的人</div>
+            <div class="ui horizontal list">
+              <div class="item"><img src="https://pbs.twimg.com/profile_images/93787198/etb2006_bigger.jpg" class="ui avatar image">
+                <div class="content"><a href="" class="header">tuiry</a>
+                  <p class="no margin"><a href="" class="ui label">插畫</a><a href="" class="ui label">perfume</a></p>
+                </div>
+              </div>
+              <div class="item"><img src="https://pbs.twimg.com/profile_images/93787198/etb2006_bigger.jpg" class="ui avatar image">
+                <div class="content"><a href="" class="header">airos</a>
+                  <p class="no margin"><a href="" class="ui label">平面設計</a></p>
+                </div>
+              </div>
+              <div class="item"><img src="https://pbs.twimg.com/profile_images/93787198/etb2006_bigger.jpg" class="ui avatar image">
+                <div class="content"><a href="" class="header">mary</a>
+                  <p class="no margin"><a href="" class="ui label">網頁設計</a></p>
+                </div>
+              </div>
+              <div class="item"><img src="https://pbs.twimg.com/profile_images/93787198/etb2006_bigger.jpg" class="ui avatar image">
+                <div class="content"><a href="" class="header">alice</a>
+                  <p class="no margin"><a href="" class="ui label">網頁設計</a><a href="" class="ui label">插畫</a></p>
+                </div>
+              </div>
+            </div>
             <div class="ui horizontal divider">類似的坑</div>
+            <table id="pit-list" ng-init="pitView='all';pitViewMode='normal'" class="ui table segment">
+              <tbody class="ui basic accordion">
+                <tr>
+                  <td><a href="" class="ui label">國會大代誌</a></td>
+                  <td><a href="" ng-click="pitDetail=1" class="with padding block display">controller debug blahblahblah</a></td>
+                  <td ng-show="pitView=='all'"><a href="" class="ui label">前端</a><a href="" class="ui label">angular</a></td>
+                  <td ng-show="pitView=='all'"><a href="" class="ui label">github</a></td>
+                  <td ng-show="login=='done'">
+                    <div class="align right">
+                      <div ng-show="pitView=='all'" ng-click="pitCount.ongoing=pitCount.ongoing+1" class="ui icon button small green add to"><i class="icon add"></i></div>
+                      <div ng-show="pitView=='mine' &amp;&amp; pitViewMode=='normal'" ng-click="pitCount.ongoing=pitCount.ongoing-1; pitCount.archived=pitCount.archived+1" class="ui icon button small green mark as done"><i class="icon checkmark checked"></i></div>
+                      <div ng-show="pitView=='mine' &amp;&amp; pitViewMode=='archive'" ng-click="pitCount.ongoing=pitCount.ongoing+1; pitCount.archived=pitCount.archived-1" class="ui icon button small mark as active"><i class="icon undo"></i></div>
+                      <div ng-show="pitView=='mine'" class="ui icon button small black remove from"><i class="icon remove"></i></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr ng-show="pitDetail==1" class="detail">
+                  <td colspan="5">
+                    <p>坑型<a href="" class="ui label left margin">g0v 技術部</a><a href="" class="ui label left margin">前端</a><a href="" class="ui label left margin">angular</a>，坑址<a href="" class="ui label left margin">github</a>，標記<a href="" class="ui label left margin">bug<i class="icon external url"></i></a>，里程碑<a href="" class="ui label left margin">OOO<i class="icon external url"></i></a>，目前狀態 open，指派給<a href="" class="ui label left margin">Lee1092<i class="icon external url"></i></a></p>
+                    <div class="ui divider"></div>
+                    <p>所屬專案<a href="" class="ui label left margin">國會大代誌</a>，宗旨「blahblah潮短版簡介」，使用技術<a href="" class="ui label left margin">Angular JS</a><a href="" class="ui label left margin">Semantic UI</a><a href="" class="ui label left margin">Sass</a><a href="" class="ui label left margin">Compass</a><a href="" class="ui label left margin">Node JS</a>，專案文件<a href="" class="ui label left margin">hackfoldr<i class="icon external url"></i></a>，專案成果<a href="" class="ui label left margin">網頁<i class="icon external url"></i></a></p>
+                    <div class="ui divider"></div>
+                    <p><a href="hack-panel-pit_ID.html" class="ui icon right labeled small button">本坑獨立頁面<i class="icon right arrow"></i></a></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="" class="ui label">基礎建設</a></td>
+                  <td><a href="" ng-click="pitDetail=2" class="with padding block display">專案整理、各專案長短版簡介撰寫</a></td>
+                  <td ng-show="pitView=='all'"><a href="" class="ui label">企畫</a></td>
+                  <td ng-show="pitView=='all'"><a href="" class="ui label">hackpad</a></td>
+                  <td ng-show="login=='done'">
+                    <div class="align right">
+                      <div ng-show="pitView=='all'" ng-click="pitCount.ongoing=pitCount.ongoing+1" class="ui icon button small green add to"><i class="icon add"></i></div>
+                      <div ng-show="pitView=='mine' &amp;&amp; pitViewMode=='normal'" ng-click="pitCount.ongoing=pitCount.ongoing-1; pitCount.archived=pitCount.archived+1" class="ui icon button small green mark as done"><i class="icon checkmark checked"></i></div>
+                      <div ng-show="pitView=='mine' &amp;&amp; pitViewMode=='archive'" ng-click="pitCount.ongoing=pitCount.ongoing+1; pitCount.archived=pitCount.archived-1" class="ui icon button small mark as active"><i class="icon undo"></i></div>
+                      <div ng-show="pitView=='mine'" class="ui icon button small black remove from"><i class="icon remove"></i></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr ng-show="pitDetail==2" class="detail">
+                  <td colspan="5">
+                    <p>blah 零時坑報 hackpad 上的坑詳細描述，步驟 123 要注意什麼…。</p>
+                    <div class="ui divider"></div>
+                    <p>坑型<a href="" class="ui label left margin">g0v 文化部</a><a href="" class="ui label left margin">文案</a>，坑址<a href="" class="ui label left margin">hackpad</a>，認領人<a href="" class="ui label left margin">Lee1092<i class="icon external url"></i></a><a href="" class="ui label left margin">Lee1092<i class="icon external url"></i></a><a href="" class="ui label left margin">Lee1092<i class="icon external url"></i></a>，完成品<a href="" class="ui label left margin">網頁<i class="icon external url"></i></a></p>
+                    <div class="ui divider"></div>
+                    <p>所屬專案<a href="" class="ui label left margin">基礎建設</a>，宗旨「blahblah潮短版簡介」，使用技術<a href="" class="ui label left margin">Angular JS</a><a href="" class="ui label left margin">Semantic UI</a><a href="" class="ui label left margin">Sass</a><a href="" class="ui label left margin">Compass</a><a href="" class="ui label left margin">Node JS</a>，專案文件<a href="" class="ui label left margin">hackfoldr<i class="icon external url"></i></a>，專案成果<a href="" class="ui label left margin">網頁<i class="icon external url"></i></a></p>
+                    <div class="ui divider"></div>
+                    <p><a href="hack-panel-pit_ID.html" class="ui icon right labeled small button">本坑獨立頁面<i class="icon right arrow"></i></a></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="" class="ui label">萌典</a></td>
+                  <td><a href="" ng-click="pitDetail=3" class="with padding block display">這裡有批柴好便宜的</a></td>
+                  <td ng-show="pitView=='all'"><a href="" class="ui label">資料</a></td>
+                  <td ng-show="pitView=='all'"><a href="" class="ui label">github</a></td>
+                  <td ng-show="login=='done'">
+                    <div class="align right">
+                      <div ng-show="pitView=='all'" ng-click="pitCount.ongoing=pitCount.ongoing+1" class="ui icon button small green add to"><i class="icon add"></i></div>
+                      <div ng-show="pitView=='mine' &amp;&amp; pitViewMode=='normal'" ng-click="pitCount.ongoing=pitCount.ongoing-1; pitCount.archived=pitCount.archived+1" class="ui icon button small green mark as done"><i class="icon checkmark checked"></i></div>
+                      <div ng-show="pitView=='mine' &amp;&amp; pitViewMode=='archive'" ng-click="pitCount.ongoing=pitCount.ongoing+1; pitCount.archived=pitCount.archived-1" class="ui icon button small mark as active"><i class="icon undo"></i></div>
+                      <div ng-show="pitView=='mine'" class="ui icon button small black remove from"><i class="icon remove"></i></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr ng-show="pitDetail==3" class="detail">
+                  <td colspan="5">
+                    <p>坑型<a href="" class="ui label left margin">g0v 技術部</a><a href="" class="ui label left margin">前端</a>，標記<a href="" class="ui label left margin">bug<i class="icon external url"></i></a>，里程碑<a href="" class="ui label left margin">OOO<i class="icon external url"></i></a>，目前狀態 open，指派給<a href="" class="ui label left margin">Lee1092<i class="icon external url"></i></a></p>
+                    <div class="ui divider"></div>
+                    <p>所屬專案<a href="" class="ui label left margin">國會大代誌</a>，宗旨「blahblah潮短版簡介」，使用技術<a href="" class="ui label left margin">Angular JS</a><a href="" class="ui label left margin">Semantic UI</a><a href="" class="ui label left margin">Sass</a><a href="" class="ui label left margin">Compass</a><a href="" class="ui label left margin">Node JS</a>，專案文件<a href="" class="ui label left margin">hackfoldr<i class="icon external url"></i></a>，專案成果<a href="" class="ui label left margin">網頁<i class="icon external url"></i></a></p>
+                    <div class="ui divider"></div>
+                    <p><a href="hack-panel-pit_ID.html" class="ui icon right labeled small button">本坑獨立頁面<i class="icon right arrow"></i></a></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="" class="ui label">國會大代誌</a></td>
+                  <td><a href="" ng-click="pitDetail=7" class="with padding block display">國會娘角色設計</a></td>
+                  <td ng-show="pitView=='all'"><a href="" class="ui label">插畫</a></td>
+                  <td ng-show="pitView=='all'"><a href="" class="ui label">hackpad</a></td>
+                  <td ng-show="login=='done'">
+                    <div class="align right">
+                      <div ng-show="pitView=='all'" ng-click="pitCount.ongoing=pitCount.ongoing+1" class="ui icon button small green add to"><i class="icon add"></i></div>
+                      <div ng-show="pitView=='mine' &amp;&amp; pitViewMode=='normal'" ng-click="pitCount.ongoing=pitCount.ongoing-1; pitCount.archived=pitCount.archived+1" class="ui icon button small green mark as done"><i class="icon checkmark checked"></i></div>
+                      <div ng-show="pitView=='mine' &amp;&amp; pitViewMode=='archive'" ng-click="pitCount.ongoing=pitCount.ongoing+1; pitCount.archived=pitCount.archived-1" class="ui icon button small mark as active"><i class="icon undo"></i></div>
+                      <div ng-show="pitView=='mine'" class="ui icon button small black remove from"><i class="icon remove"></i></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr ng-show="pitDetail==7" class="detail">
+                  <td colspan="5">
+                    <p>blah 零時坑報 hackpad 上的坑詳細描述，步驟 123 要注意什麼…。</p>
+                    <div class="ui divider"></div>
+                    <p>坑型<a href="" class="ui label left margin">g0v 文化部</a><a href="" class="ui label left margin">文案</a>，坑址<a href="" class="ui label left margin">hackpad</a>，認領人<a href="" class="ui label left margin">Lee1092<i class="icon external url"></i></a><a href="" class="ui label left margin">Lee1092<i class="icon external url"></i></a><a href="" class="ui label left margin">Lee1092<i class="icon external url"></i></a>，完成品<a href="" class="ui label left margin">網頁<i class="icon external url"></i></a></p>
+                    <div class="ui divider"></div>
+                    <p>所屬專案<a href="" class="ui label left margin">基礎建設</a>，宗旨「blahblah潮短版簡介」，使用技術<a href="" class="ui label left margin">Angular JS</a><a href="" class="ui label left margin">Semantic UI</a><a href="" class="ui label left margin">Sass</a><a href="" class="ui label left margin">Compass</a><a href="" class="ui label left margin">Node JS</a>，專案文件<a href="" class="ui label left margin">hackfoldr<i class="icon external url"></i></a>，專案成果<a href="" class="ui label left margin">網頁<i class="icon external url"></i></a></p>
+                    <div class="ui divider"></div>
+                    <p><a href="hack-panel-pit_ID.html" class="ui icon right labeled small button">本坑獨立頁面<i class="icon right arrow"></i></a></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="" class="ui label">基礎建設</a></td>
+                  <td><a href="" ng-click="pitDetail=8" class="with padding block display">g0v 介紹 i18n 日文版</a></td>
+                  <td ng-show="pitView=='all'"><a href="" class="ui label">翻譯</a><a href="" class="ui label">transfix</a></td>
+                  <td ng-show="pitView=='all'"><a href="" class="ui label">hackpad</a></td>
+                  <td ng-show="login=='done'">
+                    <div class="align right">
+                      <div ng-show="pitView=='all'" ng-click="pitCount.ongoing=pitCount.ongoing+1" class="ui icon button small green add to"><i class="icon add"></i></div>
+                      <div ng-show="pitView=='mine' &amp;&amp; pitViewMode=='normal'" ng-click="pitCount.ongoing=pitCount.ongoing-1; pitCount.archived=pitCount.archived+1" class="ui icon button small green mark as done"><i class="icon checkmark checked"></i></div>
+                      <div ng-show="pitView=='mine' &amp;&amp; pitViewMode=='archive'" ng-click="pitCount.ongoing=pitCount.ongoing+1; pitCount.archived=pitCount.archived-1" class="ui icon button small mark as active"><i class="icon undo"></i></div>
+                      <div ng-show="pitView=='mine'" class="ui icon button small black remove from"><i class="icon remove"></i></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr ng-show="pitDetail==8" class="detail">
+                  <td colspan="5">
+                    <p>blah 零時坑報 hackpad 上的坑詳細描述，步驟 123 要注意什麼…。</p>
+                    <div class="ui divider"></div>
+                    <p>坑型<a href="" class="ui label left margin">g0v 文化部</a><a href="" class="ui label left margin">文案</a>，坑址<a href="" class="ui label left margin">hackpad</a>，認領人<a href="" class="ui label left margin">Lee1092<i class="icon external url"></i></a><a href="" class="ui label left margin">Lee1092<i class="icon external url"></i></a><a href="" class="ui label left margin">Lee1092<i class="icon external url"></i></a>，完成品<a href="" class="ui label left margin">網頁<i class="icon external url"></i></a></p>
+                    <div class="ui divider"></div>
+                    <p>所屬專案<a href="" class="ui label left margin">基礎建設</a>，宗旨「blahblah潮短版簡介」，使用技術<a href="" class="ui label left margin">Angular JS</a><a href="" class="ui label left margin">Semantic UI</a><a href="" class="ui label left margin">Sass</a><a href="" class="ui label left margin">Compass</a><a href="" class="ui label left margin">Node JS</a>，專案文件<a href="" class="ui label left margin">hackfoldr<i class="icon external url"></i></a>，專案成果<a href="" class="ui label left margin">網頁<i class="icon external url"></i></a></p>
+                    <div class="ui divider"></div>
+                    <p><a href="hack-panel-pit_ID.html" class="ui icon right labeled small button">本坑獨立頁面<i class="icon right arrow"></i></a></p>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="" class="ui label">開源藝術示範區</a></td>
+                  <td><a href="" ng-click="pitDetail=9" class="with padding block display">小幫手之歌編曲</a></td>
+                  <td ng-show="pitView=='all'"><a href="" class="ui label">編曲</a></td>
+                  <td ng-show="pitView=='all'"><a href="" class="ui label">hackpad</a></td>
+                  <td ng-show="login=='done'">
+                    <div class="align right">
+                      <div ng-show="pitView=='all'" ng-click="pitCount.ongoing=pitCount.ongoing+1" class="ui icon button small green add to"><i class="icon add"></i></div>
+                      <div ng-show="pitView=='mine' &amp;&amp; pitViewMode=='normal'" ng-click="pitCount.ongoing=pitCount.ongoing-1; pitCount.archived=pitCount.archived+1" class="ui icon button small green mark as done"><i class="icon checkmark checked"></i></div>
+                      <div ng-show="pitView=='mine' &amp;&amp; pitViewMode=='archive'" ng-click="pitCount.ongoing=pitCount.ongoing+1; pitCount.archived=pitCount.archived-1" class="ui icon button small mark as active"><i class="icon undo"></i></div>
+                      <div ng-show="pitView=='mine'" class="ui icon button small black remove from"><i class="icon remove"></i></div>
+                    </div>
+                  </td>
+                </tr>
+                <tr ng-show="pitDetail==9" class="detail">
+                  <td colspan="5">
+                    <p>blah 零時坑報 hackpad 上的坑詳細描述，步驟 123 要注意什麼…。</p>
+                    <div class="ui divider"></div>
+                    <p>坑型<a href="" class="ui label left margin">g0v 文化部</a><a href="" class="ui label left margin">文案</a>，坑址<a href="" class="ui label left margin">hackpad</a>，認領人<a href="" class="ui label left margin">Lee1092<i class="icon external url"></i></a><a href="" class="ui label left margin">Lee1092<i class="icon external url"></i></a><a href="" class="ui label left margin">Lee1092<i class="icon external url"></i></a>，完成品<a href="" class="ui label left margin">網頁<i class="icon external url"></i></a></p>
+                    <div class="ui divider"></div>
+                    <p>所屬專案<a href="" class="ui label left margin">基礎建設</a>，宗旨「blahblah潮短版簡介」，使用技術<a href="" class="ui label left margin">Angular JS</a><a href="" class="ui label left margin">Semantic UI</a><a href="" class="ui label left margin">Sass</a><a href="" class="ui label left margin">Compass</a><a href="" class="ui label left margin">Node JS</a>，專案文件<a href="" class="ui label left margin">hackfoldr<i class="icon external url"></i></a>，專案成果<a href="" class="ui label left margin">網頁<i class="icon external url"></i></a></p>
+                    <div class="ui divider"></div>
+                    <p><a href="hack-panel-pit_ID.html" class="ui icon right labeled small button">本坑獨立頁面<i class="icon right arrow"></i></a></p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </section>
         </div>
       </section>
@@ -238,6 +409,9 @@
       <script>
         $("#nav .panel").addClass("active");
         $("#menu .pit").addClass("active");
+        $(".add.to").click(function(){
+          $(this).addClass("disabled");
+        });
       </script>
     </div>
   </body>

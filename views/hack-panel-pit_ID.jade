@@ -10,10 +10,8 @@ block content
         .ui.label.right.margin 坑
         | 專案整理、各專案長短版簡介撰寫
       .right.menu
-        .ui.icon.labeled.button.green.item(ng-show="login=='done' && !added",ng-click="added=!added") 加到清單
+        .ui.icon.labeled.button.green.item(ng-show="login=='done'").add 加到清單
           i.icon.add
-        .ui.icon.labeled.button.green.disabled.item(ng-show="login=='done' && added",ng-click="added=!added") 已加到清單
-          i.icon.checkmark.checked
         .ui.icon.labeled.button.item(ng-click="socialShare=!socialShare") 分享
           i.icon.forward.mail
     #social-share(ng-show="socialShare").light.gray.extended.block
@@ -76,10 +74,44 @@ block content
                 td.detail 專案成果
                   a(href="").ui.label.left.margin 網頁
                     i.icon.external.url
-      .ui.horizontal.divider 可能填坑的人
+      .ui.horizontal.divider 追蹤此坑的人
+      .ui.horizontal.list
+        .item
+          img.ui.avatar.image(src="https://pbs.twimg.com/profile_images/93787198/etb2006_bigger.jpg")
+          .content
+            a(href="").header tuiry
+            p.no.margin
+              a(href="").ui.label 插畫
+              a(href="").ui.label perfume
+        .item
+          img.ui.avatar.image(src="https://pbs.twimg.com/profile_images/93787198/etb2006_bigger.jpg")
+          .content
+            a(href="").header airos
+            p.no.margin
+              a(href="").ui.label 平面設計
+        .item
+          img.ui.avatar.image(src="https://pbs.twimg.com/profile_images/93787198/etb2006_bigger.jpg")
+          .content
+            a(href="").header mary
+            p.no.margin
+              a(href="").ui.label 網頁設計
+        .item
+          img.ui.avatar.image(src="https://pbs.twimg.com/profile_images/93787198/etb2006_bigger.jpg")
+          .content
+            a(href="").header alice
+            p.no.margin
+              a(href="").ui.label 網頁設計
+              a(href="").ui.label 插畫
       .ui.horizontal.divider 類似的坑
+      table#pit-list.ui.table.segment(ng-init="pitView='all';pitViewMode='normal'")
+        tbody.ui.basic.accordion
+          include _hack-pit-select-software
+          include _hack-pit-select-culture
 
 block script
   script.
     $("#nav .panel").addClass("active");
     $("#menu .pit").addClass("active");
+    $(".add.to").click(function(){
+      $(this).addClass("disabled");
+    });

@@ -229,4 +229,9 @@ a.block.display, a:link.block.display {
   line-height: 2em;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/ETBlue\/Documents\/GitHub\/g0v-tour-guide\/sass\/global\.sass}line{font-family:\00003143}}
+.no.margin {
+  margin: 0;
+}
+
 /*# sourceMappingURL=global.css.map */
