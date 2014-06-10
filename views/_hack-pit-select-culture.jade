@@ -1,10 +1,12 @@
 tr
-  td
+  td.two.line.height
     a(href="").ui.label 國會大代誌
   td
     a(href="",ng-click="pitDetail=7").with.padding.block.display 國會娘角色設計
-  td(ng-show="pitView=='all'"): a(href="").ui.label 插畫
-  td(ng-show="pitView=='all'"): a(href="").ui.label hackpad
+  td(ng-show="pitView=='all'").two.line.height
+    a(href="").ui.label 插畫
+  td(ng-show="pitView=='all'").two.line.height
+    a(href="").ui.label hackpad
   td(ng-show="login=='done'")
     include _hack-pit-action-buttons
 tr(ng-show="pitDetail==7").detail
@@ -46,14 +48,15 @@ tr(ng-show="pitDetail==7").detail
       a(href="hack-panel-pit_ID.html").ui.icon.right.labeled.small.button 本坑獨立頁面
         i.icon.right.arrow
 tr
-  td
+  td.two.line.height
     a(href="").ui.label 基礎建設
   td
     a(href="",ng-click="pitDetail=8").with.padding.block.display g0v 介紹 i18n 日文版
-  td(ng-show="pitView=='all'")
+  td(ng-show="pitView=='all'").two.line.height
     a(href="").ui.label 翻譯
     a(href="").ui.label transfix
-  td(ng-show="pitView=='all'"): a(href="").ui.label hackpad
+  td(ng-show="pitView=='all'").two.line.height
+    a(href="").ui.label hackpad
   td(ng-show="login=='done'")
     include _hack-pit-action-buttons
 tr(ng-show="pitDetail==8").detail
@@ -95,12 +98,14 @@ tr(ng-show="pitDetail==8").detail
       a(href="hack-panel-pit_ID.html").ui.icon.right.labeled.small.button 本坑獨立頁面
         i.icon.right.arrow
 tr
-  td
+  td.two.line.height
     a(href="").ui.label 開源藝術示範區
   td
     a(href="",ng-click="pitDetail=9").with.padding.block.display 小幫手之歌編曲
-  td(ng-show="pitView=='all'"): a(href="").ui.label 編曲
-  td(ng-show="pitView=='all'"): a(href="").ui.label hackpad
+  td(ng-show="pitView=='all'").two.line.height
+    a(href="").ui.label 編曲
+  td(ng-show="pitView=='all'").two.line.height
+    a(href="").ui.label hackpad
   td(ng-show="login=='done'")
     include _hack-pit-action-buttons
 tr(ng-show="pitDetail==9").detail

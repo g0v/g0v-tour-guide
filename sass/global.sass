@@ -64,16 +64,26 @@ a,a:link
 .indent
   margin-left: 2rem
 
-.ui.label.right.margin
-  margin-right: 0.5rem
-
-.ui.label.left.margin
-  margin-left: 0.5rem
+.ui.label, i.icon
+  &.right.margin
+    margin-right: 0.5rem
+  &.left.margin
+    margin-left: 0.5rem
 
 .ui.label
   line-height: 1em
   i.icon
     margin: 0 0 0 0.5em
+
+.light.gray.extended.block
+  background-color: rgba(#000,0.03)
+  +border-bottom-radius(0.3rem)
+
+.two.line.height
+  line-height: 2em
+
+.no.margin
+  margin: 0
 
 #software
   .ui.image
@@ -113,7 +123,7 @@ a,a:link
     margin-left: 17rem
     @media screen and (max-width: 960px)
       margin-left: 0
-    #pit-selector
+    #pit-selector, #project-selector
       padding: 1rem 0
       @media screen and (max-width: 960px)
         padding: 1rem
@@ -132,13 +142,3 @@ a,a:link
     p
       line-height: 2rem
       margin: 0
-
-.light.gray.extended.block
-  background-color: rgba(#000,0.03)
-  +border-bottom-radius(0.3rem)
-
-.two.line.height
-  line-height: 2em
-
-.no.margin
-  margin: 0

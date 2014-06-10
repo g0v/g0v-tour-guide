@@ -1,8 +1,8 @@
 extends hack
 
 block hackspace
-  #guide.ui.form.segment
-    p 嗨，ETBlue！您擅長使用哪些工人智慧？ - 來自小光 bot 的問候
+  #guide.ui.form.segment(ng-init="login='done'")
+    p 嗨，ETBlue！您擅長使用哪些工人智慧？ - 來自工人院的問候
     .inline.field
       .ui.checkbox
         input#check1(name="",type="checkbox")

@@ -632,5 +632,6 @@ block script
     $(".mark.as.done, .mark.as.active, .remove.from").click(function(){
       $(this).addClass("disabled");
       $(this).parents("tr").hide(2000);
+      $(this).parents("tr").next().hide(2000);
     });
 
