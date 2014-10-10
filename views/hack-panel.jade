@@ -2,7 +2,7 @@ extends hack
 
 block hackspace
 
-  #panel(ng-init="login='done';pitCount={ongoing:10,archived:99};projectCount={ongoing:10,archived:99};ideaCount={ongoing:10,archived:99}")
+  #panel(ng-init="login='done';pitCount={ongoing:10,archived:99};projectCount={ongoing:3,archived:39};ideaCount={ongoing:5,archived:59}")
 
     include _hack-login
 
@@ -15,10 +15,10 @@ block hackspace
           .ui.label.red(ng-show="login=='done'") {{ pitCount.ongoing }}
         a(href="hack-panel-project.html").item.project 專案
           .ui.label 99
-          .ui.label.blue(ng-show="login=='done'") 3
+          .ui.label.blue(ng-show="login=='done'") {{ projectCount.ongoing }}
         a(href="hack-panel-idea.html").item.idea 零感
           .ui.label 88
-          .ui.label.green(ng-show="login=='done'") 10
+          .ui.label.green(ng-show="login=='done'") {{ ideaCount.ongoing }}
       .section.title 填坑材料
       .section.ui.vertical.menu.inverted
         a(href="hack-panel-achievement.html").item g0v 現有成果
